@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Link from 'next/link'
 import axios from 'axios'
 import { BsArrowRight } from 'react-icons/bs'
