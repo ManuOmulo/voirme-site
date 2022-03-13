@@ -1,0 +1,45 @@
+
+.imageContainer {
+  position: relative;
+  min-height: 50%;
+  width: 100%;
+
+  p {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 0.75em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 15px;
+    background-color: #fff;
+    border-radius: 2px;
+    color: #3277FA;
+  }
+}
+
+.imageContainer > img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.details {
+  position: relative;
+  height: 50%;
+  width: 100%;
+  padding: 0 1em;
+
+  h3 {
+    font-weight: 400;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+  }
+
+  p {
+    position: absolute;
+    bottom: 0;
+    font-size: 0.95em;
+  }
+}

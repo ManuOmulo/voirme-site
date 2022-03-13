@@ -1,0 +1,42 @@
+.container {
+  width: 200px;
+  height: 310px;
+  margin: 0 10px 0 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  .imageContainer {
+    width: 200px;
+    height: 200px;
+
+    img {
+      height: 200px;
+      width: 200px;
+      object-fit: cover/ contain;
+    }
+  }
+
+  .details {
+    padding: 0 10px;
+
+    h2 {
+      font-size: 0.95em;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: 1em;
+      text-transform: capitalize;
+    }
+
+    p {
+      color: grey;
+      // font-style: italic;
+      font-size: 0.9em;
+
+      span {
+        font-weight: 500;
+        font-style: normal;
+      }
+    }
+  }
+}

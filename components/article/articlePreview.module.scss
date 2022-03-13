@@ -1,0 +1,49 @@
+.article {
+  width: 250px;
+  margin-bottom: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  break-inside: avoid-column;
+}
+
+.imageContainer {
+  background: no-repeat center center/cover;
+  width: 250px;
+  height: 200px;
+}
+
+.details {
+  width: inherit;
+  padding: 0 10px 15px;
+
+  h3 {
+    text-transform: capitalize;
+    margin-top: 0.5em;
+    margin-bottom: 0;
+  }
+
+  p {
+    color: rgb(102, 101, 101);
+    margin-top: 0.5em;
+    font-size: 0.9em;
+  }
+
+  h4 {
+    font-size: 0.8em;
+  }
+
+  button {
+    padding: 3px 15px;
+    background-color: #303038;
+    color: #fff;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(0.97);
+      background-color: #fff;
+      color: #000012;
+      border: 1px solid #000012;
+    }
+  }
+}

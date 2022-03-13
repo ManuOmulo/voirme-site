@@ -1,0 +1,44 @@
+.navbar{
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000012;
+  padding: 10px;
+  width: 100%;
+  height: 60px;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.voirme {
+  width: 100px;
+  margin-left: 2em;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important;
+  }
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 4em;
+
+  li {
+    margin: 1.5em;
+    font-size: 0.95em;
+    transition: all 0.2s ease;
+    color: #B1B1B1;
+
+    &:active, &:hover {
+      color: #fff;
+    }
+  }
+}

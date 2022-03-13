@@ -1,0 +1,42 @@
+.imageWrapper {
+  width: 100px;
+  height: 100px;
+
+  .image {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+  }
+}
+
+.details {
+  width: 260px;
+  height: 100px;
+  margin: 0 0px 20px 5px;
+
+  h3 {
+    margin: 5px 0 0 0;
+    font-size: 0.9em;
+    text-transform: capitalize;
+  }
+
+  p {
+    margin: 5px 0 0;
+    font-size: 0.8em;
+    color: rgb(117, 115, 115);
+  }
+
+  button {
+    margin-top: 7px;
+    background-color: #000012;
+    color: #fff;
+    border-radius: 2px;
+    transition: all 500ms ease;
+    cursor: pointer;
+
+    &:hover {
+      color: #000012;
+      background-color: #fff;
+    }
+  }
+}

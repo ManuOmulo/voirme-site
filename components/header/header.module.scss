@@ -1,0 +1,39 @@
+.header {
+  position: relative;
+  background: url('../../public/background2.jpg') no-repeat center center/cover;
+  width: 100%;
+  height: 16em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(3px);
+  }
+
+  h1 {
+    color: rgb(216, 216, 216);
+    z-index: 1;
+    text-transform: capitalize;
+    font-size: 2.3em;
+    margin-left: 4em;
+  }
+
+  .imageContainer {
+    position: absolute;
+    top: 7em;
+    left: 15em;
+    width: 400px;
+    height: 350px;
+    background: no-repeat center center/cover;
+    border: 13px solid #fff;
+    z-index: 1;
+  }
+}
