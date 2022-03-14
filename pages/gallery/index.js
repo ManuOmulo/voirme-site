@@ -9,11 +9,9 @@ import styles from '../../styles/Gallery.module.scss'
 const Gallery = ({ images }) => {
   const [showModal, setShowModal] = useState(false)
 
-  const hero = <h2 className={styles.hero}>VoirMe Gallery</h2>
-
   return (
     <main>
-      <Header title={hero}/>
+      <Header hero="VoirMe Gallery"/>
 
       <div className={styles.main}>
         <div className={styles.gallery}>
