@@ -61,7 +61,7 @@
       }
 
       h2 {
-        font-size: 1.1em;
+        font-size: 1em;
         text-transform: capitalize;
       }
 
@@ -84,5 +84,38 @@
         margin-top: 0;
       }
     }
+  }
+}
+
+.socials {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 5px 10px;
+  margin-top: 2em;
+
+  h3 {
+    margin-top: 0;
+    font-size: 0.94em;
+    text-transform: capitalize;
+  }
+}
+
+.links {
+  display: flex;
+  align-items: center;
+
+  a {
+    margin-right: 10px;
+  }
+
+  .whatsapp,
+  .facebook,
+  .twitter{
+    width: 30px;
+    height: 30px;
+  }
+
+  .linkedIn {
+    width: 26px;
+    height: 26px;
   }
 }
