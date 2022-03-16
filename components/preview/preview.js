@@ -14,10 +14,6 @@ const Preview = ({ post, className }) => {
 
         <h3>{post.attributes.type}</h3>
         <h2>{post.attributes.title}</h2>
-
-        <div className={styles.details}>
-          <p>{dateFormat(post.attributes.publishedAt, "dddd, dS mmmm, yyyy")}</p>
-        </div>
       </section>
     </Link>
   )

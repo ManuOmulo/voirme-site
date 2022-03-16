@@ -4,10 +4,6 @@ import Image from 'next/image'
 import styles from './latest.module.scss'
 
 const LatestComponent = ({ post, className }) => {
-  // const myLoader=({src})=>{
-  //   return `${process.env.NEXT_PUBLIC_FRONTEND_URL}${post.attributes.image.data.attributes.url}`
-  // }
-
   return (
     <div className={className}>
       <div className={styles.imageWrapper}>

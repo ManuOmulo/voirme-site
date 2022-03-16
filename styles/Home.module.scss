@@ -21,11 +21,10 @@
 
 .links {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 0.3em;
   width: 70%;
   height: 60vh;
-  // overflow: hidden;
   cursor: pointer;
   z-index: 200;
   margin-top: 5em;
@@ -40,7 +39,6 @@
   justify-content: center;
   background: no-repeat center center/cover;
   color: #fff;
-  padding: 0 2em;
 
   &:before {
     content: "";
@@ -55,13 +53,6 @@
 
   h3, h2 {
     z-index: 200;
-  }
-
-  .details {
-    p {
-      z-index: 200;
-      color: #fff;
-    }
   }
 
   h2 {
@@ -86,8 +77,9 @@
 }
 
 .previewOne {
-  grid-column: 1 / span 2;
+  grid-column: 1 / span 3;
   grid-row: 1 / span 2;
+  padding: 0 2em;
 
   h3 {
     font-size: 1em;
@@ -103,10 +95,13 @@
 
   h2 {
     font-size: 3em;
+    margin-top: 0.3em;
   }
 }
 
 .previewTwo {
+  padding: 0 1em;
+
   h3 {
     font-size: 0.8em;
     text-transform: uppercase;
@@ -119,11 +114,14 @@
   }
 
   h2 {
-    font-size: 2em;
+    font-size: 1.7em;
+    margin-top: 0.1em;
   }
 }
 
 .previewThree {
+  padding: 0 1em;
+
   h3 {
     font-size: 0.8em;
     text-transform: uppercase;
@@ -136,7 +134,8 @@
   }
 
   h2 {
-    font-size: 2em;
+    font-size: 1.7em;
+    margin-top: 0.1em;
   }
 }
 

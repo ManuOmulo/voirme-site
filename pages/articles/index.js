@@ -12,7 +12,6 @@ const AllArticles = ({ articles, pageCount }) => {
   const [displayedArticles, setDisplayedArticles] = useState(articles)
   const [currentPageCount, setCurrentPageCount] = useState(pageCount)
   const [search, setSearch] = useState(undefined)
-  // const [displayedPageNumber, setDisplayedPageNumber] = useState(0)
 
   const fetchArticles = async (currentPage, searchTerm=search) => {
     if (searchTerm !== undefined) {
