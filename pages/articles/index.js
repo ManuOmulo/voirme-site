@@ -15,11 +15,11 @@ const AllArticles = ({ articles, pageCount }) => {
 
   const fetchArticles = async (currentPage, searchTerm=search) => {
     if (searchTerm !== undefined) {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/articles?populate=image&sort=id:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}&filters[type][$eq]=${searchTerm}`)
+      const response = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/articles?populate[image][fields][0]=url&sort=id:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}&filters[type][$eq]=${searchTerm}`)
       const data = await response.json()
       return data.data
     } else {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/articles?populate=image&sort=id:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`)
+      const response = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/articles?populate[image][fields][0]=url&sort=id:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`)
       const data = await response.json()
       return data.data
     }
@@ -49,7 +49,7 @@ const AllArticles = ({ articles, pageCount }) => {
     }
 
     if (searchTerms.includes(value)) {
-      const searchResponse = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/articles?populate=image&sort=id:desc&pagination[pageSize]=${limit}&filters[type][$eq]=${value}`)
+      const searchResponse = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/articles?populate[image][fields][0]=url&sort=id:desc&pagination[pageSize]=${limit}&filters[type][$eq]=${value}`)
       const data = await searchResponse.json()
       setCurrentPageCount(data.meta.pagination.pageCount)
       return setDisplayedArticles(data.data)
@@ -134,7 +134,7 @@ const AllArticles = ({ articles, pageCount }) => {
 export default AllArticles
 
 export async function getServerSideProps() {
-  const response = await fetch(`${process.env.SERVER_URL}/articles?populate=image&sort=id:desc&pagination[pageSize]=${limit}`)
+  const response = await fetch(`${process.env.SERVER_URL}/articles?populate[image][fields][0]=url&sort=id:desc&pagination[pageSize]=${limit}`)
   const data = await response.json()
 
   return {

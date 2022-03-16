@@ -125,7 +125,7 @@ const Home = ({
 export default Home
 
 export async function getServerSideProps() {
-  const articleCategoriesRequest = `${process.env.SERVER_URL}/categories?populate[articles][populate]=image`
+  const articleCategoriesRequest = `${process.env.SERVER_URL}/categories?populate[articles][populate][image][fields][0]=url`
   const allPaintingsRequest = `${process.env.SERVER_URL}/paintings?populate=image&sort=id:desc&pagination[limit]=6`
 
   const getArticles = axios.get(articleCategoriesRequest)

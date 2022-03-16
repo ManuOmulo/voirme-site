@@ -37,7 +37,7 @@ const Gallery = ({ images }) => {
 export default Gallery
 
 export async function getServerSideProps() {
-  const response = await fetch(`${process.env.SERVER_URL}/paintings?populate=image&sort=id:desc`)
+  const response = await fetch(`${process.env.SERVER_URL}/paintings?populate[image][fields][0]=url&sort=id:desc`)
   const data = await response.json()
 
   return {
