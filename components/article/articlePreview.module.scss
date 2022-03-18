@@ -15,6 +15,12 @@
   width: inherit;
   padding: 0 10px 15px;
 
+  .calendar {
+    color: palevioletred;
+    margin-right: 2px;
+    font-size: 1.1em;
+  }
+
   h3 {
     text-transform: capitalize;
     margin-top: 0.5em;
@@ -33,17 +39,19 @@
 
   button {
     padding: 3px 15px;
-    background-color: #303038;
+    background-color: #07072e;
     color: #fff;
     border-radius: 3px;
     font-weight: bold;
+    width: 50%;
     cursor: pointer;
 
     &:hover {
       transform: scale(0.97);
       background-color: #fff;
-      color: #000012;
-      border: 1px solid #000012;
+      color: #0a0a49;;
+      border: 1px solid #0a0a49;;
     }
   }
+
 }

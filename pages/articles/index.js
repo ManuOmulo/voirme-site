@@ -1,12 +1,16 @@
 import { useState } from 'react';
+import Image from 'next/image'
+import Link from 'next/link'
 import ReactPaginate from 'react-paginate'
+import dateFormat from 'dateformat';
+import { FaRegCalendar, FaUser, FaUserAlt, FaUserAltSlash } from 'react-icons/fa'
 
-import Header from '../../components/header/header'
+import Navbar from '../../components/navbar/navbar'
 import ArticlePreview from '../../components/article/articlePreview';
 
 import styles from '../../styles/Articles.module.scss'
 
-const limit = 16
+const limit = 17
 
 const AllArticles = ({ articles, pageCount }) => {
   const [displayedArticles, setDisplayedArticles] = useState(articles)
@@ -27,7 +31,6 @@ const AllArticles = ({ articles, pageCount }) => {
 
   const handleClick = async (data) => {
     let displayedPage = data.selected + 1
-    // setDisplayedPageNumber(displayedPage)
 
     if (search !== undefined) {
       const getSearchedArticle = await fetchArticles(displayedPage, search)
@@ -38,8 +41,7 @@ const AllArticles = ({ articles, pageCount }) => {
     }
   }
 
-  const handleChange = async (e) => {
-    const { value } = e.target
+  const handleChange = async (value) => {
     const searchTerms = ["sports", "education", "art", "lifestyle"]
     setSearch(value)
 
@@ -56,49 +58,49 @@ const AllArticles = ({ articles, pageCount }) => {
     }
   }
 
+  const categories = ["all", "sports", "education", "art", "lifestyle"]
+
+  const headerArticle = articles[0]
+  const otherArticles = displayedArticles.filter(article => article.id !== headerArticle.id)
+
   return (
     <main>
-      <header>
-        <Header />
+      <Navbar />
+
+      <header className={styles.header}>
+        <ul className={styles.categories}>
+          {
+            categories.map((term, index) => (
+              <li onClick={() => handleChange(term)} key={index}>{term}</li>
+            ))
+          }
+        </ul>
+        <div className={styles.others}>
+          <div className={styles.imageContainer}>
+            <Image className={styles.image} src={`${headerArticle.attributes.image.data.attributes.url}`} width={800} height={415} alt="firstImage"/>
+          </div>
+          <div className={styles.headerDetails}>
+            <h3>{headerArticle.attributes.title}</h3>
+            <p className={styles.description}>{headerArticle.attributes.description}</p>
+            <div className={styles.metaData}>
+              <p><span><FaRegCalendar className={styles.icon}/></span>{dateFormat(headerArticle.attributes.publishedAt, "dS mmmm, yyyy")}</p>
+              {/* <p className={styles.category}>{headerArticle.attributes.type}</p> */}
+              <p><span><FaUser /></span></p>
+            </div>
+            <Link href={`/articles/${headerArticle.id}`} passHref>
+              <button>Read More</button>
+            </Link>
+          </div>
+        </div>
       </header>
 
       <section className={styles.main}>
-        <h1>All Articles</h1>
 
         <div className={styles.articlesContainer}>
-          <aside className={styles.categories}>
-            <h3>Categories</h3>
-            <div onChange={handleChange} className={styles.radio} defaultValue="all">
-              <label>
-                <input type="radio" name="category" value="all"/>
-                <p>All</p>
-              </label>
-
-              <label>
-                <input type="radio" name="category" value="art"/>
-                <p>Art</p>
-              </label>
-
-              <label>
-                <input type="radio" name="category" value="sports"/>
-                <p>Sports</p>
-              </label>
-
-              <label>
-                <input type="radio" name="category" value="lifestyle"/>
-                <p>Lifestyle</p>
-              </label>
-
-              <label>
-                <input type="radio" name="category" value="education"/>
-                <p>Education</p>
-              </label>
-            </div>
-          </aside>
 
           <div className={styles.articles}>
             {
-              displayedArticles.map((article, index) => (
+              otherArticles.map((article, index) => (
                 <ArticlePreview article={article} key={index}/>
               ))
             }

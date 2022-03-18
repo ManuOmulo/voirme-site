@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import dateFormat from 'dateformat'
+import { FaRegCalendar } from 'react-icons/fa'
 
 import styles from './articlePreview.module.scss'
 
@@ -14,10 +15,12 @@ const ArticlePreview = ({ article }) => {
       <div className={styles.details}>
         <h3>{article.attributes.title}</h3>
         <p>{article.attributes.description}</p>
-        <h4>Published: <span>{dateFormat(article.attributes.publishedAt, "dS mmmm, yyyy")}</span></h4>
-        <Link href={`/articles/${article.id}`} passHref>
-          <button>Read More</button>
-        </Link>
+        <h4><FaRegCalendar className={styles.calendar} /> <span>{dateFormat(article.attributes.publishedAt, "dS mmmm, yyyy")}</span></h4>
+        <div className={styles.button}>
+          <Link href={`/articles/${article.id}`} passHref>
+            <button>Read More</button>
+          </Link>
+        </div>
       </div>
     </div>
   )
