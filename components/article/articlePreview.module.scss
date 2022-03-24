@@ -1,5 +1,7 @@
+$button-color: #DB1F48;
+
 .article {
-  width: 250px;
+  width: 230px;
   margin-bottom: 15px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   break-inside: avoid-column;
@@ -39,7 +41,10 @@
 
   button {
     padding: 3px 15px;
-    background-color: #07072e;
+    // background-color: #07072e;
+    background-color: $button-color;
+    outline: none;
+    border: none;
     color: #fff;
     border-radius: 3px;
     font-weight: bold;

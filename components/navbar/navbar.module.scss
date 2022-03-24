@@ -1,13 +1,17 @@
+$primary-color: #fff;
+$secondary-color: #DB1F48;
+
 .navbar{
   position: fixed;
   top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #000012;
+  background-color: $primary-color;
+  color: #000;
   padding: 10px;
   width: 100%;
-  height: 60px;
+  height: 70px;
   z-index: 1000;
   overflow: hidden;
 }
@@ -29,16 +33,39 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  margin-right: 4em;
+  margin-right: 10em;
 
   li {
+    position: relative;
     margin: 1.5em;
+    padding: 5px 3px;
     font-size: 0.95em;
-    transition: all 0.2s ease;
-    color: #B1B1B1;
+    font-weight: 600;
+    color: #000;
 
-    &:active, &:hover {
-      color: #fff;
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 3px;
+      bottom: 0;
+      left: 0;
+      background-color: $secondary-color;
+      transform: scaleX(0);
+      transition: transform 0.5s ease;
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
+    }
+
+    &.active {
+      color: $secondary-color;
+
+      &::before {
+        display: none;
+      }
     }
   }
 }

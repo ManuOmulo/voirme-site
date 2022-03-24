@@ -1,0 +1,14 @@
+.socials {
+  display: flex;
+  margin: 0 0 1em;
+  padding: 0;
+
+  li {
+    margin-right: 15px;
+  }
+
+  .socialIcon {
+    font-size: 1.8em;
+    cursor: pointer;
+  }
+}

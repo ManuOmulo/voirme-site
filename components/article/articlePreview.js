@@ -9,7 +9,7 @@ const ArticlePreview = ({ article }) => {
   return (
     <div className={styles.article}>
       <div className={styles.imageContainer}>
-        <Image className={styles.image} src={`${article.attributes.image.data.attributes.url}`} width={250} height={200} alt="articleImage" />
+        <Image className={styles.image} src={`${article.attributes.image.data.attributes.url}`} width={230} height={200} alt="articleImage" />
       </div>
 
       <div className={styles.details}>

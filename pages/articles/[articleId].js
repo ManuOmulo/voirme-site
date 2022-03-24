@@ -42,7 +42,6 @@ const Article = ({ article }) => {
     window.open('https://web.whatsapp.com://send?text= https://www.youtube.com/watch?v=ohpCMpderow');
   }
 
-
   return (
     <main>
       <Head>

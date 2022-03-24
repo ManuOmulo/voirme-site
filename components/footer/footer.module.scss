@@ -1,9 +1,12 @@
+$primary-color: #071330;
+$secondary-color: #E5DDC8;
+
 .footer {
   width: 100%;
   min-height: 18em;
   padding: 20px 0 10px;
-  background-color: #000012;
-  color: #fff;
+  background-color:  $primary-color;
+  color: $secondary-color;
   overflow: hidden;
 
   .wrapper {

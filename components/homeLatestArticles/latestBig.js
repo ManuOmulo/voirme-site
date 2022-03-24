@@ -7,7 +7,7 @@ const LatestBigComponent = ({ post, className }) => {
   return (
     <div className={className}>
       <div className={styles.imageContainer}>
-        <Image className={styles.image} src={`${post.attributes.image.data.attributes.url}`} layout="fill" alt="bigImage"/>
+        <Image className={styles.image} src={`${post.attributes.image.data.attributes.url}`} width={400} height={430} alt="bigImage"/>
       </div>
 
       <div className={styles.details}>

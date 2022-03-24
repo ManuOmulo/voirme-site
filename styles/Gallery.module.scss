@@ -10,12 +10,13 @@
     grid-auto-flow: dense;
 
     .image {
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all 2s ease-in-out;
+      // border-radius: 5px;
+      // cursor: pointer;
+      // transition: all 2s ease-in-out;\
 
       .imageContainer {
         position: relative;
+        cursor: pointer;
         height: 100%;
         width: 100%;
 
