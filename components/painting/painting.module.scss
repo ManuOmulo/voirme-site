@@ -1,3 +1,5 @@
+$primary-color: #DB1F48;
+
 .container {
   width: 200px;
   height: 310px;
@@ -26,11 +28,11 @@
     h3 {
       font-size: 1em;
       text-transform: capitalize;
+      color: $primary-color;
     }
 
     p {
-      color: grey;
-      // font-style: italic;
+      color: rgb(105, 105, 105);
       font-size: 0.9em;
 
       span {

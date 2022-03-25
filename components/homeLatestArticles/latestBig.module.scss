@@ -1,3 +1,5 @@
+$primary-color: #DB1F48;
+
 .imageContainer {
   position: absolute;
   width: 100%;
@@ -25,8 +27,9 @@
     margin: -2em 0 0 1.5em;
     padding: 10px 40px;
     font-size: 1em;
-    background-color: #000012;
+    background-color: $primary-color;
     color: #fff;
+    border: 2px solid #fff;
     border-radius: 5px;
     transition: all 200ms ease-in-out;
     cursor: pointer;

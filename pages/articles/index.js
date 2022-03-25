@@ -105,6 +105,24 @@ const AllArticles = ({ articles, pageCount }) => {
               ))
             }
           </div>
+          <ReactPaginate
+            previousLabel=""
+            nextLabel="Next >"
+            breakLabel="•••"
+            pageCount={currentPageCount}
+            marginPagesDisplayed={2}
+            pageRangeDisplayed={3}
+            onPageChange={handleClick}
+            containerClassName={styles.paginationContainer}
+            pageClassName={styles.pageItem}
+            pageLinkClassName={styles.pageLink}
+            nextClassName={styles.tags}
+            nextLinkClassName={styles.nextLink}
+            breakClassName={styles.breakPoints}
+            breakLinkClassName={styles.breakPointsClassName}
+            activeClassName={styles.active}
+          />
+
           <div className={styles.info}>
             <div className={styles.about}>
               <h3>About Our Blog</h3>
@@ -119,27 +137,6 @@ const AllArticles = ({ articles, pageCount }) => {
             </div>
           </div>
         </div>
-
-        <ReactPaginate
-          previousLabel="< Prev"
-          nextLabel="Next >"
-          breakLabel="•••"
-          pageCount={currentPageCount}
-          marginPagesDisplayed={2}
-          pageRangeDisplayed={3}
-          onPageChange={handleClick}
-          containerClassName={styles.paginationContainer}
-          pageClassName={styles.pageItem}
-          pageLinkClassName={styles.pageLink}
-          previousClassName={styles.tags}
-          previousLinkClassName={styles.previousLink}
-          nextClassName={styles.tags}
-          nextLinkClassName={styles.nextLink}
-          breakClassName={styles.breakPoints}
-          breakLinkClassName={styles.breakPointsClassName}
-          activeClassName={styles.active}
-
-        />
 
       </section>
     </main>
