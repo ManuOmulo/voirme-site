@@ -5,6 +5,7 @@ import Navbar from '../../components/navbar/navbar'
 import SimpleDialog from '../../components/dialog/dialog'
 
 import styles from '../../styles/Gallery.module.scss'
+import hero from '../../public/frank-r-kOvOmb9946Y-unsplash.jpg'
 
 const Gallery = ({ images }) => {
   const [open, setOpen] = useState(false);
@@ -28,6 +29,19 @@ const Gallery = ({ images }) => {
   return (
     <main>
       <Navbar />
+
+      <div className={styles.hero}>
+        <div className={styles.heroImageContainer}>
+          <Image src={hero} className={styles.heroImage} alt="hero image" />
+        </div>
+        <div className={styles.details}>
+          <div className={styles.headerContainer}>
+            <div className={styles.header}>
+              <h1>Art Gallery</h1>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div className={styles.main}>
         <div className={styles.gallery}>

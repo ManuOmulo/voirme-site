@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Image from 'next/image'
 import PropTypes from 'prop-types'
 import DialogTitle from '@mui/material/DialogTitle'
@@ -7,6 +8,7 @@ import styles from './dialog.module.scss'
 
 export default function SimpleDialog(props) {
   const { onClose, selectedValue, open, image } = props
+  const [data] = useState(image)
 
   const handleClose = () => {
     onClose(selectedValue);
@@ -24,10 +26,10 @@ export default function SimpleDialog(props) {
       }}
 
     >
-      <DialogTitle>{image.attributes.title}</DialogTitle>
+      <DialogTitle>{data.attributes.title}</DialogTitle>
       <div className={styles.imageContainer}>
         <Image
-          src={`${image.attributes.image.data.attributes.url}`}
+          src={`${data.attributes.image.data.attributes.url}`}
           alt="modal Image"
           width={500}
           height={300}
@@ -35,7 +37,7 @@ export default function SimpleDialog(props) {
         />
       </div>
       <div className={styles.details}>
-        <h3>{image.attributes.artistName}</h3>
+        <h3>{data.attributes.artistName}</h3>
       </div>
     </Dialog>
   );
