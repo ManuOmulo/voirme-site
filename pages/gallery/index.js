@@ -55,6 +55,7 @@ const Gallery = ({ images }) => {
                     open={open}
                     onClose={handleClose}
                     image={image}
+                    key={image.id}
                   />
                 </div>
               ))
