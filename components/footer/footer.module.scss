@@ -5,7 +5,7 @@ $header-color: #f56886;
 .footer {
   position: relative;
   width: 100%;
-  min-height: 25em;
+  min-height: 22em;
   padding: 50px 0 10px;
   background-color:  $primary-color;
   color: $secondary-color;
@@ -192,7 +192,9 @@ $header-color: #f56886;
       position: absolute;
       bottom: 0;
       left: 0;
-      transform: translate(50%, 0);
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
       width: 500px;
       margin-top: 2em;
 

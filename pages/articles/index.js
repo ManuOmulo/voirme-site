@@ -79,7 +79,7 @@ const AllArticles = ({ articles, pageCount }) => {
         </ul>
         <div className={styles.others}>
           <div className={styles.imageContainer}>
-            <Image className={styles.image} src={`${headerArticle.attributes.image.data.attributes.url}`} width={800} height={415} alt="firstImage"/>
+            <Image className={styles.image} src={`${headerArticle.attributes.image.data.attributes.url}`} layout="fill" alt="firstImage"/>
           </div>
           <div className={styles.headerDetails}>
             <h3>{headerArticle.attributes.title}</h3>

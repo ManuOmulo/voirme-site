@@ -142,7 +142,7 @@ const Home = ({
               members.map(member => (
                 <div key={member.id} className={styles.teamMember}>
                   <div className={styles.memberPicture}>
-                    <Image src={`${member.image}`} className={styles.member} width={300} height={300} alt="memberPicture" />
+                    <Image src={`${member.image}`} className={styles.member} alt="memberPicture" layout="fill" />
                   </div>
                   <div className={styles.memberDetails}>
                     <h2>{member.name}</h2>

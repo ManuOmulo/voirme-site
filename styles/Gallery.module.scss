@@ -1,5 +1,5 @@
 .main {
-  width: 70%;
+  width: 75%;
   margin: 7em auto 10em;
 
   .gallery {
@@ -17,25 +17,17 @@
       .imageContainer {
         position: relative;
         cursor: pointer;
-        height: 100%;
+        height: 90%;
         width: 100%;
+      }
 
-        &:hover {
-          &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-          }
-        }
+      .imageDetails {
+        margin: 0;
 
-        .picture {
-          height: 100%;
-          width: 100%;
-          object-fit: center/cover;
+        p {
+          margin: 3px 0 0;
+          font-size: 0.9em;
+          text-transform: capitalize;
         }
       }
     }

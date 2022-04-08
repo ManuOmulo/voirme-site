@@ -47,9 +47,12 @@ const Gallery = ({ images }) => {
         <div className={styles.gallery}>
           {
             images.map((image) => (
-                <div key={details.id} className={styles.image}>
+                <div key={image.id} className={styles.image}>
                   <div key={image.id} className={styles.imageContainer}>
                     <Image onClick={() => handleClickOpen(image.id)} src={`${image.attributes.image.data.attributes.url}`} layout="fill" alt=" backgroundImage"/>
+                  </div>
+                  <div className={styles.imageDetails}>
+                    <p>{image.attributes.title}</p>
                   </div>
                   <SimpleDialog
                     open={open}
