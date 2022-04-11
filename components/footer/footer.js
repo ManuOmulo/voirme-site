@@ -76,7 +76,7 @@ const Footer = () => {
         </section>
 
         <section className={styles.newsLetter}>
-          <h2>News Letter</h2>
+          <h2>Dont Miss Anything</h2>
           <p>eu sem integer vitae justo eget magna fermentum iaculis eu non diam phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet enim tortor at auctor urna nunc id cursus </p>
           <form>
             <input type="text" placeholder="Enter your Email"/>

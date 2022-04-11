@@ -63,6 +63,8 @@ $primary-color: #DB1F48;
   .headerDetails {
     margin-left: 10px;
     width: 40%;
+    max-height: 100%;
+    overflow: hidden;
 
     h3 {
       margin-top: 0.3em;
@@ -74,9 +76,11 @@ $primary-color: #DB1F48;
       font-style: italic;
       line-height: 30px;
       min-height: 10em;
+      margin: 0;
     }
 
     .metaData {
+      margin-top: 1em;
       display: flex;
       align-items: center;
 
@@ -105,7 +109,7 @@ $primary-color: #DB1F48;
     }
 
     button {
-      margin: 1em auto 0;
+      margin: 0.5em auto 0;
       padding: 10px 20px;
       width: 50%;
       cursor: pointer;

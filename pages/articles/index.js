@@ -83,7 +83,7 @@ const AllArticles = ({ articles, pageCount }) => {
           </div>
           <div className={styles.headerDetails}>
             <h3>{headerArticle.attributes.title}</h3>
-            <p className={styles.description}>{headerArticle.attributes.description}</p>
+            <p className={styles.description}>{headerArticle.attributes.description.slice(0, 350)}...</p>
             <div className={styles.metaData}>
               <p><span><FaRegCalendar className={styles.icon}/></span>{dateFormat(headerArticle.attributes.publishedAt, "dS mmmm, yyyy")}</p>
               <p className={styles.author}><span><FaUser className={styles.userIcon}/></span>John Mapesa</p>

@@ -128,7 +128,7 @@ $header-color: #f56886;
         text-transform: uppercase;
         padding-bottom: 0.4em;
         border-bottom: 2px solid $header-color;
-        width: 7em;
+        width: max-content;
       }
 
       p {
