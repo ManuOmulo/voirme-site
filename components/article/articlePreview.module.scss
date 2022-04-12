@@ -8,9 +8,18 @@ $button-color: #DB1F48;
 }
 
 .imageContainer {
-  background: no-repeat center center/cover;
-  width: 250px;
-  height: 200px;
+  // background: no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 250px;
+  max-height: 200px;
+  overflow: hidden;
+
+  .image {
+    max-width: 250px;
+    max-height: 200px;
+  }
 }
 
 .details {
@@ -41,7 +50,6 @@ $button-color: #DB1F48;
 
   button {
     padding: 3px 15px;
-    // background-color: #07072e;
     background-color: $button-color;
     outline: none;
     border: none;
