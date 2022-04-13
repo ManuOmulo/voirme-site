@@ -1,3 +1,5 @@
+$primary-color: #DB1F48;
+
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -11,10 +13,12 @@
     margin-top: 2em;
     margin-left: -1.5em;
     width: 30em;
+    height: 13em;
 
     h3 {
       margin: 0;
       text-transform: uppercase;
+      color: $primary-color;
     }
 
     p {
@@ -27,7 +31,7 @@
 
   .article {
     grid-column: 1 / span 4;
-    margin: 5em 0 10em 1em;
+    margin: 3em 0 10em 1em;
     padding-left: 20px;
     line-height: 1.5em;
   }
@@ -117,5 +121,15 @@
   .linkedIn {
     width: 26px;
     height: 26px;
+  }
+}
+
+.markdown {
+  h1 {
+    font-size: 1em;
+  }
+
+  h2 {
+    font-size: 1em;
   }
 }

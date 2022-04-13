@@ -64,7 +64,7 @@ const Article = ({ article }) => {
         </div>
 
         <div className={styles.article}>
-          <ReactMarkdown>
+          <ReactMarkdown className={styles.markdown}>
             {article.attributes.article}
           </ReactMarkdown>
         </div>
