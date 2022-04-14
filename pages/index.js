@@ -34,7 +34,7 @@ const Home = ({
     paintings
   }) => {
 
-  const sliderProperties = [sliderArt, sliderEducation, sliderSports, sliderLifestyle]
+  const sliderProperties = [sliderArt, sliderEducation, sliderSports, sliderLifestyle, sliderArt]
   const topStories = [topStory1, topStory2, topStory3, topStory4]
   const articles = []
 
