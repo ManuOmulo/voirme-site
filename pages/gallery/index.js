@@ -32,7 +32,7 @@ const Gallery = ({ images }) => {
 
       <div className={styles.hero}>
         <div className={styles.heroImageContainer}>
-          <Image src={hero} className={styles.heroImage} alt="hero image" />
+          <Image src={hero} className={styles.heroImage} alt="hero image" layout="fill"/>
         </div>
         <div className={styles.details}>
           <div className={styles.headerContainer}>
@@ -46,22 +46,16 @@ const Gallery = ({ images }) => {
       <div className={styles.main}>
         <div className={styles.gallery}>
           {
-            images.map((image) => (
-                <div key={image.id} className={styles.image}>
-                  <div key={image.id} className={styles.imageContainer}>
-                    <Image onClick={() => handleClickOpen(image.id)} src={`${image.attributes.image.data.attributes.url}`} layout="fill" alt=" backgroundImage"/>
-                  </div>
-                  <div className={styles.imageDetails}>
-                    <p>{image.attributes.title}</p>
-                  </div>
-                  <SimpleDialog
-                    open={open}
-                    onClose={handleClose}
-                    image={image}
-                    key={image.id}
-                  />
+            images.map((image, key) => (
+              <div key={key} className={styles.image}>
+                <div className={styles.imageContainer}>
+                  <Image onClick={() => handleClickOpen(image.id)} src={`${image.attributes.image.data.attributes.url}`} layout="fill" alt="backgroundImage"/>
                 </div>
-              ))
+                <div className={styles.imageDetails}>
+                  <p>{image.attributes.title}</p>
+                </div>
+              </div>
+            ))
           }
         </div>
       </div>

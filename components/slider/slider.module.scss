@@ -1,3 +1,5 @@
+@use "../../abstracts/fonts";
+@use "../../abstracts/colors";
 
 .imageContainer {
   position: relative;
@@ -29,11 +31,12 @@
   position: relative;
   height: 50%;
   width: 100%;
-  padding: 0 1em;
+  padding: 0 0.5em;
 
-  h3 {
-    font-weight: 400;
+  h5 {
+    font-weight: 200;
     font-size: 0.9em;
+    font-family: fonts.$body-font;
     letter-spacing: 0.5px;
   }
 
@@ -41,6 +44,6 @@
     position: absolute;
     bottom: 0;
     font-size: 0.95em;
-    color: #d60a36;
+    color: colors.$secondary-color;
   }
 }

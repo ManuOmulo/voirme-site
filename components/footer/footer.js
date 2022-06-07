@@ -23,9 +23,7 @@ const Footer = () => {
         </section>
 
         <section className={styles.categoryLinks}>
-          <div>
-            <h2>Categories</h2>
-          </div>
+          <h2>Categories</h2>
           <ul>
             <li><Link href="/categories/art">Art</Link></li>
             <li><Link href="/categories/sports">Sports</Link></li>

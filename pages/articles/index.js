@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ReactPaginate from 'react-paginate'
 import dateFormat from 'dateformat';
-import { FaRegCalendar, FaUser } from 'react-icons/fa'
+import { FaRegCalendar } from 'react-icons/fa'
 
 import Navbar from '../../components/navbar/navbar'
 import ArticlePreview from '../../components/article/articlePreview';
@@ -12,7 +12,7 @@ import voirme from '../../public/voirme.png'
 
 import styles from '../../styles/Articles.module.scss'
 
-const limit = 17
+const limit = 16
 
 const AllArticles = ({ articles, pageCount }) => {
   const [displayedArticles, setDisplayedArticles] = useState(articles)
@@ -21,11 +21,11 @@ const AllArticles = ({ articles, pageCount }) => {
 
   const fetchArticles = async (currentPage, searchTerm=search) => {
     if (searchTerm !== undefined) {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/articles?populate[image][fields][0]=url&sort=id:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}&filters[type][$eq]=${searchTerm}`)
+      const response = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/articles?populate[image][fields][0]=url&populate[writer][fields][0]=name&populate[writer][populate][profile_picture][fields][0]=url&sort=id:desc&pagination[pageSize]=${limit}&pagination[page]=${currentPage}&filters[type][$eq]=${searchTerm}`)
       const data = await response.json()
       return data.data
     } else {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/articles?populate[image][fields][0]=url&sort=id:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`)
+      const response = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/articles?populate[image][fields][0]=url&populate[writer][fields][0]=name&populate[writer][populate][profile_picture][fields][0]=url&sort=id:desc&pagination[page]=${currentPage}&pagination[pageSize]=${limit}`)
       const data = await response.json()
       return data.data
     }
@@ -44,7 +44,8 @@ const AllArticles = ({ articles, pageCount }) => {
   }
 
   const handleChange = async (value) => {
-    const searchTerms = ["sports", "education", "art", "lifestyle"]
+    const searchTerms = ["sports", "education", "art", "culture", "lifestyle", "creative writing", "features", "VNews", "masentrepreneur"]
+
     setSearch(value)
 
     if (value === "all") {
@@ -53,14 +54,14 @@ const AllArticles = ({ articles, pageCount }) => {
     }
 
     if (searchTerms.includes(value)) {
-      const searchResponse = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/articles?populate[image][fields][0]=url&sort=id:desc&pagination[pageSize]=${limit}&filters[type][$eq]=${value}`)
+      const searchResponse = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/articles?populate[image][fields][0]=url&populate[writer][fields][0]=name&populate[writer][populate][profile_picture][fields][0]=url&sort=id:desc&pagination[pageSize]=${limit}&filters[type][$eq]=${value}`)
       const data = await searchResponse.json()
       setCurrentPageCount(data.meta.pagination.pageCount)
       return setDisplayedArticles(data.data)
     }
   }
 
-  const categories = ["all", "sports", "education", "art", "lifestyle"]
+  const categories = ["all", "sports", "education", "art", "culture", "lifestyle", "creative writing", "features", "VNews", "masentrepreneur"]
 
   const headerArticle = articles[0]
   const otherArticles = displayedArticles.filter(article => article.id !== headerArticle.id)
@@ -83,14 +84,24 @@ const AllArticles = ({ articles, pageCount }) => {
           </div>
           <div className={styles.headerDetails}>
             <h3>{headerArticle.attributes.title}</h3>
-            <p className={styles.description}>{headerArticle.attributes.description.slice(0, 350)}...</p>
+            <p className={styles.description}>{headerArticle.attributes.description}</p>
             <div className={styles.metaData}>
-              <p><span><FaRegCalendar className={styles.icon}/></span>{dateFormat(headerArticle.attributes.publishedAt, "dS mmmm, yyyy")}</p>
-              <p className={styles.author}><span><FaUser className={styles.userIcon}/></span>John Mapesa</p>
+              <div className={styles.author}>
+                <div className={styles.authorImageContainer}>
+                  <Image className={styles.authorImage} src={`${headerArticle.attributes.writer.data.attributes.profile_picture.data.attributes.url}`} alt="author pic" layout="fill"/>
+                </div>
+                <p className={styles.authorName}>
+                  {headerArticle.attributes.writer.data.attributes.name}
+                </p>
+              </div>
+              <div className={styles.calendar}>
+                <FaRegCalendar className={styles.icon}/>
+                <p>{dateFormat(headerArticle.attributes.publishedAt, "dS mmmm, yyyy")}</p>
+              </div>
               <p className={styles.category}>{headerArticle.attributes.type}</p>
             </div>
             <Link href={`/articles/${headerArticle.id}`} passHref>
-              <button>Read More</button>
+              <button className={styles.headerButton}>Read More</button>
             </Link>
           </div>
         </div>
@@ -107,7 +118,7 @@ const AllArticles = ({ articles, pageCount }) => {
           </div>
           <ReactPaginate
             previousLabel=""
-            nextLabel="Next >"
+            nextLabel="Next >>"
             breakLabel="•••"
             pageCount={currentPageCount}
             marginPagesDisplayed={2}
@@ -146,7 +157,7 @@ const AllArticles = ({ articles, pageCount }) => {
 export default AllArticles
 
 export async function getServerSideProps() {
-  const response = await fetch(`${process.env.SERVER_URL}/articles?populate[image][fields][0]=url&sort=id:desc&pagination[pageSize]=${limit}`)
+  const response = await fetch(`${process.env.SERVER_URL}/articles?populate[image][fields][0]=url&populate[writer][fields][0]=name&populate[writer][populate][profile_picture][fields][0]=url&sort=id:desc&pagination[pageSize]=${limit}`)
   const data = await response.json()
 
   return {

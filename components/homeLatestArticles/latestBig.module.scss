@@ -1,4 +1,4 @@
-$primary-color: #DB1F48;
+@use "../../abstracts/colors";
 
 .imageContainer {
   position: absolute;
@@ -27,7 +27,7 @@ $primary-color: #DB1F48;
     margin: -2em 0 0 1.5em;
     padding: 10px 40px;
     font-size: 1em;
-    background-color: $primary-color;
+    background-color: colors.$secondary-color;
     color: #fff;
     border: 2px solid #fff;
     border-radius: 5px;
@@ -37,6 +37,11 @@ $primary-color: #DB1F48;
     &:hover {
       color: #000012;
       background-color: #fff;
+      border: 2px solid colors.$secondary-color;
     }
   }
 }
+
+// @media screen and (max-width: 768px) {
+
+// }

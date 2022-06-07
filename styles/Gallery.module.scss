@@ -10,9 +10,6 @@
     grid-auto-flow: dense;
 
     .image {
-      // border-radius: 5px;
-      // cursor: pointer;
-      // transition: all 2s ease-in-out;\
 
       .imageContainer {
         position: relative;
@@ -49,9 +46,9 @@
 
 .hero {
   position: relative;
-  max-width: 75%;
+  width: 75%;
   margin: 5em auto 0;
-  height: 30em;
+  height: 32em;
 
   .heroImageContainer {
     position: relative;
@@ -89,6 +86,56 @@
         h1 {
           margin: 0;
           text-transform: capitalize
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .main {
+    width: 96%;
+  }
+
+  .hero {
+    width: 99%;
+  }
+
+
+}
+
+@media screen and (max-width: 500px) {
+  .hero {
+    height: 20em;
+
+    .details {
+      .headerContainer {
+        padding: 15px 25px;
+
+        .header {
+          padding: 15px 25px;
+          width: max-content;
+
+          h1 {
+            font-size: 1.5em;
+          }
+        }
+      }
+    }
+  }
+
+  .main {
+    margin: 2em auto;
+
+    .gallery {
+      gap: 0.3em;
+
+      .image {
+        .imageDetails {
+          p {
+            font-size: 0.6em;
+          }
         }
       }
     }

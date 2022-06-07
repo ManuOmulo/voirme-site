@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  voirme-next-app:
+    container_name: voirme-frontend
+    build: ./
+    command: npm run dev
+    working_dir: /usr/scr/voirme-next
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/usr/scr/voirme-next

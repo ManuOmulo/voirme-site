@@ -12,7 +12,7 @@ const SliderComponent = ({ post, className }) => {
       </div>
 
       <div className={styles.details}>
-        <h3>{post.attributes.description.slice(0, 220)}...</h3>
+        <h5>{post.attributes.description.slice(0, 380)}...</h5>
         <p>{dateFormat(post.attributes.publishedAt, "dddd, dS mmmm, yyyy")}</p>
       </div>
     </div>

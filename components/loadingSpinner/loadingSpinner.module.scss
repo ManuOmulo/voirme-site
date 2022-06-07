@@ -1,0 +1,80 @@
+@use "../../abstracts/colors";
+
+.spinnerContainer {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.spinner {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner::before,
+.spinner::after {
+  border: 4.7px solid colors.$secondary-color;
+  border-radius: 50%;
+  position: absolute;
+  content: '';
+  display: block;
+}
+
+.spinner::before {
+  width: 20px;
+  height: 20px;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  animation: spinner-1o3y8q 1.0499999999999998s infinite linear reverse;
+}
+
+.spinner::after {
+  animation: spinner-1o3y8q 0.7s infinite linear;
+  height: 40px;
+  width: 40px;
+  border-right-color: transparent;
+  border-top-color: transparent;
+}
+
+@keyframes spinner-1o3y8q {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .spinner {
+    width: 30px;
+    height: 30px;
+    margin-top: -5em;
+  }
+
+  .spinner::before,
+  .spinner::after {
+    border: 3.4px solid colors.$secondary-color;
+  }
+
+  .spinner::before {
+    width: 15px;
+    height: 15px;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    animation: spinner-1o3y8q 1.0499999999999998s infinite linear reverse;
+  }
+
+  .spinner::after {
+    width: 30px;
+    height: 30px;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    animation: spinner-1o3y8q 0.7s infinite linear;
+  }
+}

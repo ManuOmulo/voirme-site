@@ -1,24 +1,28 @@
-$button-color: #DB1F48;
+@use "../../abstracts/colors";
+@use "../../abstracts/fonts";
 
 .article {
-  width: 230px;
-  margin-bottom: 15px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row: 1fr;
+  min-width: 100%;
+  min-height: 20em;
+  margin-bottom: 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  break-inside: avoid-column;
 }
 
 .imageContainer {
-  // background: no-repeat center center/cover;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 250px;
-  max-height: 200px;
+  min-width: 40%;
+  min-height: 100%;
   overflow: hidden;
 
   .image {
-    max-width: 250px;
-    max-height: 200px;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -28,7 +32,7 @@ $button-color: #DB1F48;
 
   .calendar {
     color: palevioletred;
-    margin-right: 2px;
+    margin-right: 3px;
     font-size: 1.1em;
   }
 
@@ -36,35 +40,214 @@ $button-color: #DB1F48;
     text-transform: capitalize;
     margin-top: 0.5em;
     margin-bottom: 0;
+    font-size: 1.4em;
   }
 
   p {
     color: rgb(102, 101, 101);
-    margin-top: 0.5em;
-    font-size: 0.9em;
+    margin-top: 1em;
+    font-size: 1em;
+    line-height: 25px;
   }
 
-  h4 {
-    font-size: 0.8em;
-  }
-
-  button {
-    padding: 3px 15px;
-    background-color: $button-color;
+  .button {
     outline: none;
     border: none;
-    color: #fff;
-    border-radius: 3px;
-    font-weight: bold;
     width: 50%;
-    cursor: pointer;
+    margin-top: 0.5em;
 
-    &:hover {
-      transform: scale(0.97);
-      background-color: #fff;
-      color: #0a0a49;;
-      border: 1px solid #0a0a49;;
+    button {
+      background-color: colors.$secondary-color;
+      padding: 10px 15px;
+      width: 100%;
+      height: 100%;
+      outline: none;
+      border: none;
+      color: colors.$primary-color;
+      border-radius: 3px;
+      font-weight: bold;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(0.97);
+        background-color: colors.$primary-color;;
+        color: #0a0a49;;
+        border: 1px solid #0a0a49;;
+      }
     }
   }
+}
 
+.article:nth-of-type(odd) {
+  .imageContainer {
+    grid-column: 1 / 3;
+  }
+
+  .details {
+    grid-column: 3 / 5;
+  }
+}
+
+.article:nth-of-type(even) {
+  .details {
+    grid-column: 1 / 3;
+    grid-row-start: 1;
+  }
+
+  .imageContainer {
+    grid-column: 3 / 5;
+  }
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+
+  .author, .date {
+    margin-right: 20px;
+  }
+}
+
+.author {
+  display: flex;
+  align-items: center;
+
+  .authorImageContainer {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  p {
+    font-weight: 600;
+    font-size: 0.9vw;
+    margin-left: 7px;
+    text-transform: capitalize;
+    color: colors.$secondary-color;
+  }
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  // border: 2px solid green;
+
+  h4 {
+    font-weight: 600;
+    font-size: 0.8vw;
+  }
+}
+
+.category {
+  margin: 0;
+  padding: 3px 10px;
+  background-color: green;
+  border-radius: 3px;
+
+  p {
+    font-size: 0.9vw;
+    font-weight: 600;
+    color: colors.$primary-color;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 758px) {
+  .details {
+    .meta {
+      flex-wrap: wrap;
+      margin-bottom: 1em;
+
+
+      .author {
+        margin-right: 30px;
+
+        .authorImageContainer {
+          width: 30px;
+          height: 30px;
+        }
+
+        p {
+          font-size: 0.9em;
+          margin-left: 5px;
+        }
+      }
+
+      .date {
+        h4 {
+          font-size: 0.7em;
+        }
+      }
+
+      .category {
+        p {
+          font-size: 0.8em;
+        }
+      }
+    }
+
+    .button {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .article {
+    display: flex;
+    flex-direction: column;
+
+    .imageContainer {
+      width: 100%;
+      height: 15em;
+    }
+
+    .details {
+      h3 {
+        font-size: 1em;
+      }
+
+      p {
+        font-size: 0.7em;
+      }
+
+      .meta {
+        .author, .date {
+          margin-right: 15px;
+        }
+
+        .author {
+          .authorImageContainer {
+            width: 30px;
+            height: 30px;
+          }
+
+          p {
+            font-size: 0.6em;
+            margin-left: 5px;
+          }
+        }
+
+        .date {
+          h4 {
+            font-size: 0.6em;
+          }
+        }
+
+        .category {
+          p {
+            font-size: 0.6em;
+          }
+        }
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  }
 }

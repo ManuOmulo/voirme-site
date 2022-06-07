@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import useSWR from 'swr'
 import ReactMarkdown from 'react-markdown'
+
 import Header from '../../components/header/header'
 import { BsFacebook, BsLinkedin } from "react-icons/bs"
 import { FaWhatsappSquare, FaTwitterSquare } from 'react-icons/fa'

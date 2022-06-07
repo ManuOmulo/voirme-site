@@ -14,7 +14,7 @@ const Shop = () => {
 
       <section className={styles.container}>
         <div className={styles.banner}>
-          <Image src={banner} className={styles.image} alt="coming soon" />
+          <Image src={banner} className={styles.image} alt="coming soon" layout="fill"/>
         </div>
         <div className={styles.details}>
           <div className={styles.headerContainer}>

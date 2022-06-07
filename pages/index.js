@@ -12,9 +12,9 @@ import TopStoriesComponent from "../components/topStories/topStories"
 import LatestComponent from "../components/homeLatestArticles/latest"
 import LatestBigComponent from "../components/homeLatestArticles/latestBig"
 import PaintingComponent from "../components/painting/painting"
+import Svg from '../components/svg/svg'
 
 import aboutImage from '../public/about_us.jpeg'
-import jay from '../public/members/jay.jpeg'
 
 import styles from '../styles/Home.module.scss'
 
@@ -57,26 +57,37 @@ const Home = ({
 
   return(
     <div>
-      <header className={styles.header}>
-        <Navbar />
-        <div className={styles.links}>
-          <Preview post={art} className={styles.previewOne}/>
-          <Preview post={lifestyle} className={styles.previewTwo}/>
-          <Preview post={education} className={styles.previewThree}/>
-        </div>
-      </header>
+      <Navbar />
+
+      <Svg />
 
       <main className={styles.main}>
-        <section className={styles.topContent}>
+        <div className={styles.firstSectionContainer}>
           <h2 className={styles.topContentHeader}>Don&#8216;t  miss</h2>
-          <div className={styles.slider}>
-            {
-              sliderProperties.map((property, index) => (
-                <SliderComponent key={index} post={property} className={styles.container}/>
-              ))
-            }
+          <div className={styles.firstSection}>
+            <section className={styles.topContent}>
+              <div className={styles.slider}>
+                {
+                  sliderProperties.map((property, index) => (
+                    <SliderComponent key={index} post={property} className={styles.container}/>
+                  ))
+                }
+              </div>
+            </section>
+            <div className={styles.preview}>
+              <div className={styles.links}>
+                <Preview post={art} className={styles.previewOne}/>
+                <Preview post={lifestyle} className={styles.previewTwo}/>
+                <Preview post={education} className={styles.previewThree}/>
+              </div>
+            </div>
           </div>
-        </section>
+        </div>
+
+
+        {/* <section>
+          <h1>Notice Board</h1>
+        </section> */}
 
         <div className={styles.stories}>
           <section className={styles.topStories}>
@@ -196,7 +207,7 @@ export default Home
 
 export async function getServerSideProps() {
   const articleCategoriesRequest = `${process.env.SERVER_URL}/categories?populate[articles][populate][image][fields][0]=url`
-  const allPaintingsRequest = `${process.env.SERVER_URL}/paintings?populate=image&sort=id:desc&pagination[limit]=6`
+  const allPaintingsRequest = `${process.env.SERVER_URL}/paintings?populate[image][fields][0]=url&sort=id:desc&pagination[limit]=6`
 
   const getArticles = axios.get(articleCategoriesRequest)
   const getPaintings = axios.get(allPaintingsRequest)
@@ -221,11 +232,11 @@ export async function getServerSideProps() {
       sliderArt: data.category[1].attributes.articles.data[1],
       sliderLifestyle: data.category[2].attributes.articles.data[1],
       sliderEducation: data.category[3].attributes.articles.data[1],
-      sliderSports: data.category[0].attributes.articles.data[0],
-      topStory1: data.category[0].attributes.articles.data[2],
+      sliderSports: data.category[4].attributes.articles.data[0],
+      topStory1: data.category[7].attributes.articles.data[0],
       topStory2: data.category[1].attributes.articles.data[2],
-      topStory3: data.category[2].attributes.articles.data[2],
-      topStory4: data.category[3].attributes.articles.data[2],
+      topStory3: data.category[7].attributes.articles.data[2],
+      topStory4: data.category[4].attributes.articles.data[2],
       paintings: data.paintings
     }
   }

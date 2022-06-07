@@ -1,15 +1,17 @@
-$primary-color: #DB1F48;
+@use "../abstracts/colors";
 
 .header {
   position: relative;
   width: 76%;
-  margin: 5em auto;
+  height: max-content;
+  margin: 6em auto;
 }
 
 .categories {
   display: flex;
   padding: 0;
   margin: 0 0 1em;
+  overflow: hidden;
 
   li {
     margin-right: 10px;
@@ -28,7 +30,7 @@ $primary-color: #DB1F48;
       height: 3px;
       bottom: 0;
       left: 0;
-      background-color: $primary-color;
+      background-color: colors.$secondary-color;
       transform-origin: bottom right;
       transition: transform 0.55s ease-out;
     }
@@ -42,7 +44,7 @@ $primary-color: #DB1F48;
 
 .others {
   display: flex;
-  height: 25em;
+  height: 30em;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   .imageContainer {
@@ -61,41 +63,78 @@ $primary-color: #DB1F48;
   }
 
   .headerDetails {
-    margin-left: 10px;
+    position: relative;
+    margin-left: 15px;
+    padding-right: 12px;
     width: 40%;
-    max-height: 100%;
+    height: 100%;
     overflow: hidden;
 
     h3 {
-      margin-top: 0.3em;
+      margin: 0.3em 0;
       font-size: 2.1em;
+      color: colors.$secondary-color;
     }
 
     .description {
-      font-size: 1em;
-      font-style: italic;
+      font-size: clamp(0.6em, 12vw + 1em, 1em);
       line-height: 30px;
-      min-height: 10em;
       margin: 0;
     }
 
     .metaData {
-      margin-top: 1em;
+      width: 100%;
       display: flex;
       align-items: center;
+      justify-content: flex-start;
+      padding: 0;
+
+      .date {
+        font-weight: 600;
+      }
 
       .icon {
         margin-right: 3px;
         color: palevioletred
       }
 
-      .author{
-        margin-right: 50px;
-        margin-left: 30px;
+      .author, p, .calendar {
+        margin-right: 10px;
+      }
 
-        .userIcon {
-          margin-right: 5px;
-          color: grey;
+      .author{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .authorImageContainer {
+          position: relative;
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          overflow: hidden;
+
+          .authorImage {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .authorName {
+          margin-left: 7px;
+          font-weight: 600;
+          font-size: 0.9em;
+        }
+      }
+
+      .calendar {
+        display: flex;
+        align-items: center;
+
+        p {
+          font-weight: 600;
+          font-size: 0.9em;
         }
       }
 
@@ -103,7 +142,7 @@ $primary-color: #DB1F48;
         padding: 5px 10px;
         font-weight: bold;
         background-color: rgb(175, 23, 175);
-        color: #fff;
+        color: colors.$primary-color;
         border-radius: 3px;
       }
     }
@@ -113,11 +152,11 @@ $primary-color: #DB1F48;
       padding: 10px 20px;
       width: 50%;
       cursor: pointer;
-      background-color: #DB1F48;
+      background-color: colors.$secondary-color;
       border: none;
       outline: none;
-      color: #fff;
-      font-size: 1.1em;
+      color: colors.$primary-color;
+      font-size: 1em;
       font-weight: 600;
       border-radius: 5px;
     }
@@ -126,7 +165,6 @@ $primary-color: #DB1F48;
 
 .main {
   width: 76%;
-  min-height: 80vh;
   margin: 5em auto 3em;
   padding: 0;
 
@@ -142,23 +180,20 @@ $primary-color: #DB1F48;
 
   .articlesContainer {
     display: grid;
-    grid-template-columns: max-content auto;
-    gap: 35px;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 35px;
     width: 100%;
-    min-height: 80vh;
     margin: 0 auto 5em;
     padding-bottom: 30px;
 
     .articles {
       grid-column: 1 / 4;
-      columns: 4;
-      column-gap: 10px;
       margin-top: 0;
       min-height: max-content;
     }
 
     .info {
-      grid-column: max-content;
+      grid-column: 4 / 5;
       grid-row-start: 1;
       columns: 1;
 
@@ -214,7 +249,7 @@ $primary-color: #DB1F48;
   justify-content: center;
   align-items: center;
   height: 3em;
-  margin: -2em auto 0;
+  margin: 5em auto 0;
   padding: 0;
 }
 
@@ -252,11 +287,10 @@ $primary-color: #DB1F48;
   font-weight: bold;
   margin: 0 10px;
   cursor: pointer;
-  // background-color: #07072e;
-  // color: #fff;
   color: #000;
+  min-width: fit-content;
   padding: 7px 13px;
-  border-radius: 5px;
+  border-radius: 3px;
 
   &:hover {
     background-color: #07072e;
@@ -277,5 +311,173 @@ $primary-color: #DB1F48;
 
   &:hover {
     background-color: #07072e;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .header {
+    margin: 3.5em auto 0;
+    width: 96%;
+
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 1em;
+
+      li {
+        font-size: 0.8em;
+        margin-right: 5px;
+      }
+    }
+
+    .others {
+      height: 22em;
+
+      .imageContainer {
+        width: 40%;
+
+        .image {
+          object-fit: cover;
+        }
+      }
+
+      .headerDetails {
+        width: 60%;
+        margin-left: 5px;
+        padding: 5px;
+
+        h3 {
+          font-size: 1.4em;
+          margin: 0;
+          margin: 0.1em 0 0.3em;
+        }
+
+        .description {
+          line-height: 20px;
+        }
+
+        button {
+          padding: 10px 10px;
+          margin: 0;
+          font-size: 0.9em;
+        }
+      }
+    }
+  }
+
+  .main {
+    width: 96%;
+
+    .articlesContainer {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .info {
+    margin-top: 3em;
+
+    .about {
+      h3 {
+        color: colors.$secondary-color;
+        font-size: 1.6em;
+      }
+
+      p {
+        font-size: 2em;
+      }
+    }
+  }
+
+  .paginationContainer {
+    margin-top: 3em;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    .others {
+      display: flex;
+      flex-direction: column;
+      height: 34em;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+
+      .imageContainer {
+        min-width: 100%;
+        height: 22em;
+
+        .image {
+          object-fit: cover;
+        }
+      }
+
+      .headerDetails {
+        position: relative;
+        min-width: 100%;
+        margin-left: 0;
+        padding: 0 5px;
+
+        h3 {
+          font-size: 1em;
+        }
+
+        .description {
+          font-size: 0.7em;
+        }
+
+        .metaData {
+          margin: 0.5em 0;
+
+          .author, .calendar, .category {
+            margin-right: 0;
+          }
+
+          .author {
+            .authorImageContainer {
+              width: 30px;
+              height: 30px;
+            }
+
+            .authorName {
+              font-size: 0.6em;
+            }
+          }
+
+          .calendar {
+            p {
+              font-size: 0.6em;
+            }
+          }
+
+          .category {
+            font-size: 0.6em;
+          }
+        }
+
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .paginationContainer {
+    margin-top: 1em;
+  }
+
+  .info {
+    .about {
+      h3 {
+        font-size: 1.2em;
+      }
+
+      p {
+        font-size: 0.7em;
+      }
+    }
   }
 }

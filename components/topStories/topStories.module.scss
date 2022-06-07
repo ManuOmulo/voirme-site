@@ -18,3 +18,13 @@
     font-size: 0.8em;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .details {
+    max-width: 100%;
+
+    p {
+      left: 0.7em;
+    }
+  }
+}
