@@ -50,12 +50,12 @@ const Navbar = () => {
                 <Link href="/articles">Blog</Link>
               </li>
 
-              <li className={router.pathname == "/shop"? styles.active : ""}>
-                <Link href="/shop">Shop</Link>
-              </li>
-
               <li className={router.pathname == "/gallery" ? styles.active : ""}>
                 <Link href="/gallery">Art Gallery</Link>
+              </li>
+
+              <li className={router.pathname == "/shop"? styles.active : ""}>
+                <Link href="/shop">Shop</Link>
               </li>
 
               <li className={router.pathname == "/opportunities" ? styles.active : ""}>
