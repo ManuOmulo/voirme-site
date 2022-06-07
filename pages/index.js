@@ -133,9 +133,9 @@ const Home = ({
         </section>
 
         <section className={styles.about}>
+          <h2>Who we Are</h2>
           <div className={styles.summary}>
             <div className={styles.aboutDetails}>
-              <h2>Who we Are</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum nisi quis eleifend quam. Ante in nibh mauris cursus mattis molestie a iaculis. Sem fringilla ut morbi tincidunt augue interdum. Non sodales neque sodales ut etiam sit amet. Blandit libero volutpat sed cras ornare. Massa tincidunt dui ut ornare lectus sit amet. Neque gravida in fermentum et sollicitudin ac orci. Est sit amet facilisis magna etiam tempor orci. Duis convallis convallis tellus id interdum velit. Elementum pulvinar etiam non quam. In hac habitasse platea dictumst quisque sagittis. Malesuada fames ac turpis egestas sed tempus urna. Lorem ipsum dolor sit amet consectetur adipiscing elit. Morbi quis commodo odio aenean sed adipiscing. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. entum et sollicitudin ac orci. Est sit amet facilisis magna etiam tempor orci. Duis convallis convallis tellus id interdum velit. Elementum pulvinar etiam non quam. In hac habitasse platea dictumst quisque sagittis. Malesuada fames ac turpis egestas sed tempus urna. Lorem ipsum dolor sit amet consectetur adipiscing elit. Morbi quis commodo odio aenean sed adipiscing.
               </p>
             </div>

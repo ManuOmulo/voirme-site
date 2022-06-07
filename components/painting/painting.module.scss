@@ -1,9 +1,8 @@
-$primary-color: #DB1F48;
+@use "../../abstracts/colors";
 
 .container {
   width: 200px;
-  height: 310px;
-  margin: 0 10px 0 0;
+  height: 290px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   .imageContainer {
@@ -22,23 +21,38 @@ $primary-color: #DB1F48;
 
     h2 {
       font-size: 0.95em;
+      font-weight: 800;
       text-transform: uppercase;
+      margin-bottom: 5px;
     }
 
     h3 {
       font-size: 1em;
       text-transform: capitalize;
-      color: $primary-color;
+      color: colors.$secondary-color;
+      margin-bottom: 5px;
     }
 
     p {
       color: rgb(105, 105, 105);
       font-size: 0.9em;
+      font-weight: 800;
+      margin: 0;
 
       span {
         font-weight: 500;
         font-style: normal;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    &:nth-of-type(4),
+    &:nth-of-type(5),
+    &:nth-of-type(6){
+      margin-top: 1em;
     }
   }
 }

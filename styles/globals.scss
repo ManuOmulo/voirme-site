@@ -40,6 +40,10 @@ li {
   font-family: fonts.$header-font;
 }
 
+.navbarHeaderImage{
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .navigation {
     position: fixed;
@@ -52,6 +56,10 @@ li {
 
     &.visible {
       transform: translateX(0);
+    }
+
+    .navbarHeaderImage {
+      display: none;
     }
   }
 
@@ -94,14 +102,14 @@ li {
     width: 75%;
   }
 
-  .nav-white {
+  // .nav-white {
 
-  }
+  // }
 
 
 }
 
-// ---------  SVG  ------------
+// -------------  SVG  ------------
 
 .header {
   margin: 5em 0 1em;
@@ -197,69 +205,6 @@ li {
   text-align: center;
 }
 
-/* Animation */
-
-// ################ Navbar Image ##########
-.navbarHeaderImage {
-  // display: none;
-  position: relative;
-  width: 100%;
-  height: 30vh;
-  background: radial-gradient(circle, transparent 20%, #ffffff 20%, #ffffff 80%, transparent 80%, transparent) 0% 0% / 32px 32px, radial-gradient(circle, transparent 20%, #ffffff 20%, #ffffff 80%, transparent 80%, transparent) 16px 16px / 32px 32px, linear-gradient(#f7849b 2.5px, transparent 2.5px) 0px -1.25px / 16px 16px, linear-gradient(90deg, #f7849b 2.5px, #ffffff 2.5px) -1.25px 0px / 16px 16px #ffffff;
-  background-color: #ffffff;
-
-  .navbarHeaderImageBlur {
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(3px);
-  }
-
-  .navbarImageHeaderContainer {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    width: 120px;
-    height: 120px;
-    // border: 2px solid blue;
-
-    .navbarImage {
-      width: 100px;
-      height: 100px;
-    }
-  }
-
-  .icon {
-    display: block;
-    position: absolute;
-    top:20px;
-    right: 0;
-    margin-right: 20px;
-    width: 30px;
-    height: 30px;
-    color: colors.$secondary-color;
-    opacity: 0.7;
-    font-weight: 900;
-    cursor: pointer;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .navbarHeaderImage {
-    height: 22vh;
-
-    .icon {
-      top: 15px;
-      margin-right: 10px;
-      width: 25px;
-      height: 25px;
-    }
-  }
-}
-
-// ############## end on navbar image #######################
-
-
 /*Shrinking for mobile*/
 @media (max-width: 768px) {
   .header {
@@ -282,6 +227,12 @@ li {
       padding: 10px 15px;
     }
 
+    .inner-header {
+      margin-top: 3em;
+      padding-top: 8em;
+      height: 40vh;
+    }
+
     .heroDetails {
       margin-left: 2em;
       margin-top: -7em;
@@ -292,7 +243,7 @@ li {
 @media screen and (max-width: 500px) {
   .header {
     margin-top: 3em;
-    height: 20em;
+    height: 15em;
 
     h1 {
       font-size: 20px;
@@ -320,7 +271,8 @@ li {
     .inner-header {
       position: relative;
       justify-content: flex-start;
-      height: 20em;
+      height: 15em;
+      padding-top: 5em;
 
       .vectorContainer {
         position: absolute;
@@ -333,3 +285,71 @@ li {
     }
   }
 }
+
+// ########### End of SVG ###############
+
+
+// -------------- Navbar Image --------------
+@media screen and (max-width: 768px) {
+  .navigation {
+    .navbarHeaderImage {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 30vh;
+      background: radial-gradient(circle, transparent 20%, #ffffff 20%, #ffffff 80%, transparent 80%, transparent) 0% 0% / 32px 32px, radial-gradient(circle, transparent 20%, #ffffff 20%, #ffffff 80%, transparent 80%, transparent) 16px 16px / 32px 32px, linear-gradient(#f7849b 2.5px, transparent 2.5px) 0px -1.25px / 16px 16px, linear-gradient(90deg, #f7849b 2.5px, #ffffff 2.5px) -1.25px 0px / 16px 16px #ffffff;
+      background-color: #ffffff;
+
+      .navbarHeaderImageBlur {
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(3px);
+      }
+
+      .navbarImageHeaderContainer {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: 120px;
+        height: 120px;
+
+        .navbarImage {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      .icon {
+        display: block;
+        position: absolute;
+        top:20px;
+        right: 0;
+        margin-right: 20px;
+        width: 30px;
+        height: 30px;
+        color: colors.$secondary-color;
+        opacity: 0.7;
+        font-weight: 900;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navbarHeaderImage {
+    height: 22vh;
+
+    .icon {
+      top: 15px;
+      margin-right: 10px;
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+
+// ############## end on navbar image #######################
+
+

@@ -54,7 +54,7 @@ const Article = ({ article }) => {
     <main>
       <Head>
         <meta property="og:title" content={`${article.attributes.title}`}/>
-        <meta property="og:image" content={`${article.attributes.image.data.attributes}`}/>
+        <meta property="og:image" content={`${article.attributes.image.data.attributes.url}`}/>
         <meta property="og:description" content={`${article.attributes.description.slice(0, 50)}`}/>
         <meta property="og:url" content="URL OF YOUR WEBSITE"/>
         <meta property="og:image:width" content="1200" />

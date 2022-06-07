@@ -139,6 +139,7 @@
     h2 {
       text-transform: uppercase;
       font-size: 1.2em;
+      font-weight: 600;
       margin-bottom: 0.5em;
     }
   }
@@ -369,6 +370,7 @@
     width: inherit;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 }
 
@@ -378,6 +380,17 @@
   padding: 0 10px;
   margin: 50px 0 60px;
 
+  h2 {
+    text-transform: capitalize;
+    font-size: 1.6em;
+    font-weight: 600;
+    width: max-content;
+    margin: 0 0 0.5em;
+    padding: 0 0 4px 0;
+    color: colors.$secondary-color;
+    // border-bottom: 4px solid colors.$secondary-color;
+  }
+
   .summary {
     display: flex;
     justify-content: space-between;
@@ -385,15 +398,6 @@
 
     .aboutDetails {
       max-width: 60%;
-
-      h2 {
-        text-transform: capitalize;
-        font-size: 1.8em;
-        width: max-content;
-        margin-top: 0;
-        padding: 0 0 4px 0;
-        border-bottom: 4px solid colors.$secondary-color;
-      }
 
       p {
         line-height: 25px;
@@ -423,6 +427,7 @@
     text-transform: capitalize;
     text-align: center;
     font-size: 1.5em;
+    font-weight: 600;
     color: colors.$secondary-color;
   }
 
@@ -459,6 +464,7 @@
       h2 {
         text-align: center;
         margin: 1em 0 0;
+        font-weight: 600;
       }
 
       h3 {
@@ -487,6 +493,15 @@
   .main {
     max-width: 97%;
 
+    .firstSectionContainer {
+      h2 {
+        // text-align: center;
+        text-transform: capitalize;
+        font-size: 1.3em;
+        margin-bottom: 1em;
+        margin-left: 0.5em;
+      }
+    }
 
     .firstSection {
       flex-direction: column;
@@ -501,7 +516,6 @@
     }
 
     .stories {
-      border: 2px solid green;
 
       .topStories {
         display: none;
@@ -514,10 +528,8 @@
         flex-direction: column;
         width: 100%;
         height: max-content;
-        border: 2px solid red;
 
         .latestBig {
-          border: 2px solid blue;
           margin: 0;
           overflow: hidden;
 
@@ -541,11 +553,76 @@
           justify-content: space-between;
           flex-wrap: wrap;
           margin: 1em 0 0;
-          border: 2px solid purple;
 
           .otherLatestItem {
             width: 325px;
-            height: 110px;
+            max-height: 110px;
+          }
+        }
+      }
+    }
+
+    .gallery {
+      height: max-content;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 5em;
+
+      .galleryContainer {
+        height: 100%;
+        justify-content: space-between;
+      }
+    }
+
+    .about {
+      height: max-content;
+      padding: 0;
+      margin-top: 1em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h2 {
+        font-size: 1.5em;
+        text-align: center;
+        margin: 0 0 1em;
+      }
+
+      .summary {
+        display: flex;
+        flex-direction: column-reverse;
+        max-height: max-content;
+
+        .aboutDetails {
+          max-width: 100%;
+        }
+
+        .aboutImageContainer {
+          margin: 0;
+          width: 100%;
+          height: 30em;
+        }
+      }
+    }
+
+    .team {
+      padding: 0 10px;
+
+      .teamContainer {
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+        width: 100%;
+        height: 100%;
+        margin-top: 1em;
+
+        .teamMember {
+          width: 100%;
+          margin: 1.5em 0;
+          padding-top: 1.5em;
+
+          .memberDetails {
+            width: 80%;
           }
         }
       }
