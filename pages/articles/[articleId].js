@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Script from 'next/script'
 import Link from 'next/link'
@@ -9,11 +10,13 @@ import ReactMarkdown from 'react-markdown'
 import Header from '../../components/header/header'
 import { BsFacebook, BsLinkedin } from "react-icons/bs"
 import { FaWhatsappSquare, FaTwitterSquare } from 'react-icons/fa'
+import LoadingSpinner from '../../components/loadingSpinner/loadingSpinner'
 
 import styles from '../../styles/SingleArticle.module.scss'
 
 const Article = ({ article }) => {
   const [suggestionList, setSuggestionList] = useState([])
+  const router = useRouter()
 
   const { data, error } = useSWR("allArticles", async () => {
     const response = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/articles?sort=id:desc&fields=title,type,description,publishedAt&filters[type][$eq]=${article.attributes.type}&pagination[limit]=4&populate[image][fields][0]=url`)
@@ -38,6 +41,10 @@ const Article = ({ article }) => {
       <p>{post.attributes.description.slice(0, 100)}...</p>
     </div>
   ))
+
+  if (router.isFallback) {
+    return <LoadingSpinner />
+  }
 
   function openWhatsApp() {
     window.open('https://web.whatsapp.com://send?text= https://www.youtube.com/watch?v=ohpCMpderow');
