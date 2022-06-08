@@ -1,18 +1,18 @@
 .imageWrapper {
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 100%;
 
   .image {
-    height: 100px;
-    width: 100px;
+    height: 100%;
+    width: 100%;
     object-fit: cover;
   }
 }
 
 .details {
-  width: 260px;
-  height: 120px;
+  width: 100%;
+  height: 100px;
   margin: 0 0px 20px 5px;
 
   h3 {
@@ -22,7 +22,7 @@
   }
 
   p {
-    margin: 5px 0 0;
+    margin: 5px 0 3px;
     font-size: 0.8em;
     color: rgb(117, 115, 115);
   }
@@ -33,6 +33,7 @@
     color: #fff;
     border-radius: 2px;
     transition: all 200ms ease;
+    font-weight: 800;
     cursor: pointer;
 
     &:hover {
