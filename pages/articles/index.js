@@ -66,6 +66,10 @@ const AllArticles = ({ articles, pageCount }) => {
   const headerArticle = articles[0]
   const otherArticles = displayedArticles.filter(article => article.id !== headerArticle.id)
 
+  // const headerTitle = (headerArticle.attributes.title.length >= 22) ?
+  // `${post.attributes.title.slice(0, 22)}...` :
+  // `${post.attributes.title}`
+
   return (
     <main>
       <Navbar />
@@ -84,6 +88,7 @@ const AllArticles = ({ articles, pageCount }) => {
           </div>
           <div className={styles.headerDetails}>
             <h3>{headerArticle.attributes.title}</h3>
+            {/* <h3>softie mkfmkd sdlsld dlmsm dsllls dlsmdkl dkdkwl</h3> */}
             <p className={styles.description}>{headerArticle.attributes.description}</p>
             <div className={styles.metaData}>
               <div className={styles.author}>

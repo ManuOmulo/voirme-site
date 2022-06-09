@@ -38,6 +38,7 @@
       font-size: 0.9em;
       font-weight: 800;
       margin: 0;
+      text-transform: capitalize;
 
       span {
         font-weight: 500;
@@ -53,6 +54,47 @@
     &:nth-of-type(5),
     &:nth-of-type(6){
       margin-top: 1em;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 160px;
+    height: 225px;
+    margin-bottom: 1em;
+
+    &:nth-of-type(4),
+    &:nth-of-type(5),
+    &:nth-of-type(6){
+      margin-top: 0;
+    }
+
+    .imageContainer {
+      width: 160px;
+      height: 160px;
+
+      img {
+        height: 160px;
+        width: 160px;
+        object-fit: cover/ contain;
+      }
+    }
+
+    .details {
+      padding: 0 5px;
+
+      h2 {
+        font-size: 0.6em;
+      }
+
+      h3 {
+        font-size: 0.7em;
+      }
+
+      p {
+        font-size: 0.7em;
+      }
     }
   }
 }

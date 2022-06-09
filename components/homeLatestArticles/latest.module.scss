@@ -52,3 +52,20 @@
     width: max-content;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .details {
+    h3 {
+      font-size: 0.7em;
+      font-weight: 800;
+    }
+
+    p {
+      font-size: 0.7em;
+    }
+
+    button {
+      font-size: 0.8em;
+    }
+  }
+}

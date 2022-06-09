@@ -43,6 +43,19 @@
   }
 }
 
-// @media screen and (max-width: 768px) {
+@media screen and (max-width: 500px) {
+  .details {
+    left: 10px;
+    top: -10px;
 
-// }
+    .header {
+      font-size: 2em;
+      font-weight: 800;
+    }
+
+    .button {
+      padding: 5px 20px;
+      border: 1px solid #fff;
+    }
+  }
+}

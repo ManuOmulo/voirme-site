@@ -79,7 +79,7 @@
         padding: 10px;
         background-color: #00AEF0;
         text-align: center;
-        width: 4em;
+        width: max-content;
         border-radius: 2px;
       }
 
@@ -104,7 +104,7 @@
         padding: 3px 10px;
         background-color: limegreen;
         border-radius: 2px;
-        width: 7em;
+        width: max-content;
       }
 
       h2 {
@@ -126,7 +126,7 @@
         letter-spacing: 0.1em;
         padding: 3px 14px;
         background-color: rgb(170, 15, 170);
-        width: 9em;
+        width: max-content;
         border-radius: 2px;
       }
 
@@ -378,9 +378,9 @@
     }
 
     .arrowRight {
-      margin-top: 16px;
-      padding-left: 3px;
-      font-size: 1.3em;
+      margin-top: 19px;
+      padding-left: 2px;
+      font-size: 1em;
       font-weight: 800;
       color: rgb(83, 83, 83);
 
@@ -514,12 +514,15 @@
 }
 
 @media screen and (max-width: 768px ) {
+  .topContent {
+    display: none;
+  }
+
   .main {
     max-width: 97%;
 
     .firstSectionContainer {
       h2 {
-        // text-align: center;
         text-transform: capitalize;
         font-size: 1.3em;
         margin-bottom: 1em;
@@ -608,7 +611,6 @@
 
       h2 {
         font-size: 1.5em;
-        text-align: center;
         margin: 0 0 1em;
       }
 
@@ -619,6 +621,7 @@
 
         .aboutDetails {
           max-width: 100%;
+          padding: 0 10px;
         }
 
         .aboutImageContainer {
@@ -646,7 +649,7 @@
           padding-top: 1.5em;
 
           .memberDetails {
-            width: 80%;
+            width: 90%;
           }
         }
       }
@@ -655,30 +658,67 @@
 }
 
 @media screen and (max-width: 500px) {
-  .header {
-    width: 100%;
+  .topContentHeader {
+    font-size: 0.5em;
+  }
 
-    .links {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      width: 95%;
-      gap: 0.45em 0;
-      justify-content: space-between;
+  .firstSectionContainer {
+    height: max-content;
+    overflow: hidden;
+    margin-bottom: 2em;
 
-      .previewOne {
-        padding-left: 2em;
+    .firstSection {
+      width: 100%;
+      height: max-content;
+      margin-bottom: 1em;
 
-        h2 {
-          font-size: 2em;
+      .preview {
+        height: max-content;
+        margin: 0;
+      }
+
+      .links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: max-content;
+
+        .previewOne,
+        .previewTwo,
+        .previewThree {
+          height: 15em;
+          width: 100%;
         }
-      }
 
-      .previewTwo {
-        margin-right: 0.225em;
-      }
+        .previewOne {
+          padding-left: 1em;
 
-      .previewThree {
-        margin-left: 0.225em;
+          h2 {
+            font-size: 1em;
+          }
+
+          h3 {
+            font-size: 0.7em;
+            font-weight: 800;
+            padding: 3px 10px;
+          }
+        }
+
+        .previewTwo {
+          margin-right: 0;
+
+          h2 {
+            font-size: 1em;
+          }
+        }
+
+        .previewThree {
+          margin-left: 0;
+
+          h2 {
+            font-size: 1em;
+          }
+        }
       }
     }
   }
@@ -687,32 +727,165 @@
     display: flex;
     flex-direction: column;
     max-width: 95%;
-  }
 
-  .topContent {
-    max-width: 400px;
+    .firstSectionContainer {
+      h2 {
+        font-size: 0.8em;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-left: 0;
+      }
+    }
 
-    // .slider {
-    //   max-width: 400px;
+    .stories {
+      display: flex;
+      flex-direction: column;
 
-    //   .container {
-    //     max-width: 400px;
-    //   }
-    // }
-  }
+      .latestPosts {
+        margin-left: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: max-content;
 
-  .stories {
-    display: flex;
-    flex-direction: column;
+        .latestBig {
+          margin: 0;
+          overflow: hidden;
 
-    .topStories {
-      max-width: 100%;
+          .latestBigItem {
+            padding: 0;
+            width: 100%;
+            height: 23em;
 
-      .storiesWrapper {
-        max-width: 100%;
+            &::after {
+              margin: 0;
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
 
-        .story {
-          max-width: 100%;
+        .otherLatest {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          margin: 1em 0 0;
+          overflow: hidden;
+
+          .otherLatestItem {
+            width: 100%;
+            max-height: 100px;
+          }
+        }
+      }
+    }
+
+    .gallery {
+      margin-bottom: 1.5em;
+
+      h3 {
+        font-size: 0.8em;
+        font-weight: 800;
+      }
+
+      .arrow {
+        margin-top: -16px;
+
+
+        p {
+          font-size: 0.8em;
+        }
+
+        .arrowRight {
+          font-size: 0.8em;
+          margin-top: 15px;
+        }
+      }
+    }
+
+    .about {
+      margin-top: 1em;
+      align-items: flex-start;
+
+      h2 {
+        font-size: 0.9em;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .summary {
+        display: flex;
+        flex-direction: column-reverse;
+        max-height: max-content;
+
+        .aboutDetails {
+          padding: 0 5px;
+
+          p {
+            font-size: 0.75em;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+
+    .team {
+      padding: 0 5px;
+
+      h3 {
+        font-size: 0.9em;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .teamContainer {
+
+        .teamMember {
+          width: 100%;
+          margin: 1em 0;
+          padding-top: 1em;
+
+          .memberPicture {
+            width: 150px;
+            height: 150px;
+            box-shadow: 0.3rem 0.3rem #ff8aa3, -0.3rem -0.3rem #ccc;
+
+            .member {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          .memberDetails {
+            width: 100%;
+          }
+
+          h2 {
+            text-align: center;
+            margin: 1em 0 0;
+            font-weight: 600;
+            font-size: 1em;
+          }
+
+          h3 {
+            font-size: 0.9em;
+            margin: 0.5em 0 0;
+          }
+
+          p {
+            line-height: 20px;
+            font-size: 0.7em;
+          }
+
+          .memberSocials {
+            margin: 0em 0 0;
+
+            a {
+              margin: 0 10px;
+              font-size: 1.3em;
+            }
+          }
         }
       }
     }

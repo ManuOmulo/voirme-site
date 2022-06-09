@@ -70,8 +70,8 @@
     overflow: hidden;
 
     h3 {
-      margin: 0.5em 0;
-      font-size: 2.1em;
+      margin: 0.2em 0 0.5em;
+      font-size: clamp(1.02rem, 1.5vw, 2em);
       font-weight: 600;
       color: colors.$secondary-color;
     }
@@ -348,13 +348,13 @@
         padding: 5px;
 
         h3 {
-          font-size: 1.4em;
+          // font-size: 1.4em;
           margin: 0;
-          margin: 0.1em 0 0.3em;
+          margin: 0em 0 0.3em;
         }
 
         .description {
-          line-height: 20px;
+          line-height: 22px;
           font-size: 0.95em;
         }
 
@@ -403,7 +403,7 @@
     .others {
       display: flex;
       flex-direction: column;
-      height: 32.5em;
+      height: 34em;
       overflow: hidden;
       margin: 0;
       padding: 0;
@@ -425,6 +425,7 @@
 
         h3 {
           font-size: 1em;
+          margin: 0.5em 0;
         }
 
         .description {

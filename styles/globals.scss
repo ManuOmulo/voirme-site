@@ -75,7 +75,7 @@ li {
   }
 
   .nav-lightpink {
-    background-color: hsl(347, 75%, 60%);
+    background-color: hsl(347, 70%, 70%);
     width: 95%;
     transition-delay: 0.2s;
 
@@ -88,6 +88,7 @@ li {
     position: absolute;
     background-color: #fff;
     width: 94%;
+    height: 100vh;
     position: relative;
     transition-delay: 0s;
 
@@ -99,7 +100,7 @@ li {
 
 @media screen and (max-width: 500px) {
   .nav-pink {
-    width: 75%;
+    width: 65%;
   }
 
   // .nav-white {
@@ -292,62 +293,66 @@ li {
 // -------------- Navbar Image --------------
 @media screen and (max-width: 768px) {
   .navigation {
-    .navbarHeaderImage {
+
+    .icon {
       display: block;
+      position: absolute;
+      top:20px;
+      left: 20px;
+      width: 25px;
+      height: 25px;
+      color: colors.$secondary-color;
+      opacity: 0.7;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .mainContainer {
+      position: absolute;
+      width: 80%;
+      margin: 5em 2em 3em 2em;
+      border-radius: 10px;
+      border: 2px solid red;
+    }
+
+    .navbarHeaderImage {
+      display: flex;
       position: relative;
       width: 100%;
-      height: 30vh;
-      background: radial-gradient(circle, transparent 20%, #ffffff 20%, #ffffff 80%, transparent 80%, transparent) 0% 0% / 32px 32px, radial-gradient(circle, transparent 20%, #ffffff 20%, #ffffff 80%, transparent 80%, transparent) 16px 16px / 32px 32px, linear-gradient(#f7849b 2.5px, transparent 2.5px) 0px -1.25px / 16px 16px, linear-gradient(90deg, #f7849b 2.5px, #ffffff 2.5px) -1.25px 0px / 16px 16px #ffffff;
-      background-color: #ffffff;
-
-      .navbarHeaderImageBlur {
-        width: 100%;
-        height: 100%;
-        backdrop-filter: blur(3px);
-      }
+      height: 10vh;
+      background-color: rgba(255, 200, 210, 0.25);
 
       .navbarImageHeaderContainer {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%,-50%);
-        width: 120px;
-        height: 120px;
+        width: 70px;
+        height: 70px;
 
         .navbarImage {
-          width: 100px;
-          height: 100px;
+          width: 100%;
+          height: 100%;
         }
-      }
-
-      .icon {
-        display: block;
-        position: absolute;
-        top:20px;
-        right: 0;
-        margin-right: 20px;
-        width: 30px;
-        height: 30px;
-        color: colors.$secondary-color;
-        opacity: 0.7;
-        font-weight: 900;
-        cursor: pointer;
       }
     }
   }
 }
 
 @media screen and (max-width: 500px) {
-  .navbarHeaderImage {
-    height: 22vh;
+  .navigation {
+    .mainContainer {
+      position: absolute;
+      width: 80%;
+      margin: 5em 2em 3em 1em;
+      border: 2px solid red;
+    }
 
-    .icon {
-      top: 15px;
-      margin-right: 10px;
-      width: 25px;
-      height: 25px;
+  .navbarHeaderImage {
+    height: 10vh;
+
+    .navbarImageHeaderContainer {
+      width: 40px;
+      height: 40px;
     }
   }
+}
 }
 
 // ############## end on navbar image #######################

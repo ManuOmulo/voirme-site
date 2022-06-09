@@ -51,6 +51,10 @@
   cursor: pointer;
   margin-right: 10em;
 
+  .navIcon {
+    display: none;
+  }
+
   li {
     position: relative;
     margin: 1.2em;
@@ -107,18 +111,24 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 4em 0 0;
+    margin: 4em 0 0 1em;
     padding: 0;
+
+    .navIcon {
+      display: inline-block;
+      margin-right: 10px;
+    }
 
     li {
       margin: 0 0 1em;
+      color: rgb(24, 24, 24);
     }
   }
 
   .hamburger {
     transform: scale(0.75);
     position: absolute;
-    left: 7;
+    left: 7px;
   }
 
   .line {
@@ -136,18 +146,6 @@
       width: 20px;
     }
   }
-
-  // .icon {
-  //   display: block;
-  //   position: absolute;
-  //   top:1;
-  //   right: 0;
-  //   margin-right: 20px;
-  //   width: 30px;
-  //   height: 30px;
-  //   color: colors.$secondary-color;
-  // }
-
 }
 
 
@@ -156,5 +154,16 @@
     button {
       right: 0.5em;
     }
+  }
+
+  .list {
+    li {
+      font-weight: 600;
+      font-size: 0.8em;
+    }
+  }
+
+  .hamburger {
+    left: 3px;
   }
 }

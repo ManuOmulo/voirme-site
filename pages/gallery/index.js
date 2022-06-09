@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 
 import Navbar from '../../components/navbar/navbar'
-import SimpleDialog from '../../components/dialog/dialog'
+import Content from '../../components/content/content'
 
 import styles from '../../styles/Gallery.module.scss'
 import hero from '../../public/frank-r-kOvOmb9946Y-unsplash.jpg'
@@ -45,18 +45,7 @@ const Gallery = ({ images }) => {
 
       <div className={styles.main}>
         <div className={styles.gallery}>
-          {
-            images.map((image, key) => (
-              <div key={key} className={styles.image}>
-                <div className={styles.imageContainer}>
-                  <Image onClick={() => handleClickOpen(image.id)} src={`${image.attributes.image.data.attributes.url}`} layout="fill" alt="backgroundImage"/>
-                </div>
-                <div className={styles.imageDetails}>
-                  <p>{image.attributes.title}</p>
-                </div>
-              </div>
-            ))
-          }
+          <Content data={images} />
         </div>
       </div>
     </main>
@@ -65,8 +54,8 @@ const Gallery = ({ images }) => {
 
 export default Gallery
 
-export async function getServerSideProps() {
-  const response = await fetch(`${process.env.SERVER_URL}/paintings?populate[image][fields][0]=url&sort=id:desc`)
+export async function getStaticProps() {
+  const response = await fetch(`${process.env.SERVER_URL}/paintings?populate[image][fields][0]=url&sort=id:desc&pagination[start]=0&pagination[limit]=25`)
   const data = await response.json()
 
   return {

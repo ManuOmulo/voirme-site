@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import axios from 'axios'
 import { BsArrowRight } from 'react-icons/bs'
-import { FaInstagramSquare, FaTwitter, FaLinkedin, FaFacebook } from 'react-icons/fa'
+import { FaInstagramSquare, FaTwitter, FaLinkedin, FaFacebook, FaChevronRight } from 'react-icons/fa'
 import { members } from '../resources/members'
 
 import Navbar from '../components/navbar/navbar'
@@ -63,7 +63,7 @@ const Home = ({
 
       <main className={styles.main}>
         <div className={styles.firstSectionContainer}>
-          <h2 className={styles.topContentHeader}>Don&#8216;t  miss</h2>
+          <h2 className={styles.topContentHeader}>Don&#8216;t miss</h2>
           <div className={styles.firstSection}>
             <section className={styles.topContent}>
               <div className={styles.slider}>
@@ -120,7 +120,7 @@ const Home = ({
           <Link href="/gallery" passHref>
             <div className={styles.arrow}>
               <p>More</p>
-              <BsArrowRight className={styles.arrowRight}/>
+              <FaChevronRight className={styles.arrowRight}/>
             </div>
           </Link>
           <div className={styles.galleryContainer}>
@@ -226,7 +226,7 @@ export async function getServerSideProps() {
   return {
     props: {
       allArticles: data.category,
-      art: data.category[1].attributes.articles.data[0],
+      art: data.category[4].attributes.articles.data[0],
       lifestyle: data.category[2].attributes.articles.data[0],
       education: data.category[3].attributes.articles.data[0],
       sliderArt: data.category[1].attributes.articles.data[1],
