@@ -28,8 +28,8 @@ export const members = [
   {
     id: 3,
     image: "https://res.cloudinary.com/dopqgcnbm/image/upload/v1648188351/me_vzf4vn.webp",
-    name: "John Doe",
-    position: "Creative and HR",
+    name: "Mike Ochieng'",
+    position: "Editor and HR",
     about: "John is the founder of VoirMe and drives vision for the space. Born and raised in Kenya, John Jay Mapesa as an art lover has been developing artwork around the themes of Pan-Africanism, cultural identity and contemporary art in Africa. Originally a scientist, he now expresses his work through shedding light on others’ work.",
     socials: {
       instagram: "",
