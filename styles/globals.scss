@@ -153,10 +153,14 @@ li {
 // -------------  SVG  ------------
 
 .header {
-  margin: 5em 0 1em;
+  margin: 0em 0 1em;
   position:relative;
   text-align:center;
   color: #000;
+
+  .heroDetails {
+    position: relative;
+  }
 
   h1 {
     font-family: fonts.$header-font;
@@ -183,12 +187,15 @@ li {
     letter-spacing: 1px;
     font-size:18px;
     color: #333333;
-    margin: 0.5em 0 0;
+    margin: 0.5em 0 6em;
     text-align: left;
     width: 25em;
   }
 
   button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: max-content;
     margin: 1em 0;
     padding: 15px 20px;
@@ -252,6 +259,7 @@ li {
 @media (max-width: 768px) {
   .header {
     margin-top: 1em;
+    margin: 0;
 
     h1 {
       font-size: 25px;
@@ -263,6 +271,7 @@ li {
 
     p {
       font-size: 14px;
+      margin: 0.5em 0 5em;
     }
 
     button {
@@ -287,6 +296,7 @@ li {
   .header {
     margin-top: 3em;
     height: 15em;
+    margin: 0;
 
     h1 {
       font-size: 20px;
@@ -298,6 +308,7 @@ li {
 
     p {
       font-size: 10px;
+      margin: 0.5em 0 6em;
     }
 
     button {
