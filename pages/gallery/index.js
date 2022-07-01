@@ -11,21 +11,6 @@ const Gallery = ({ images }) => {
   const [open, setOpen] = useState(false);
   const [details, setDetails] = useState([])
 
-  const handleClickOpen = (id) => {
-    const fetchData = async () => {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/paintings/${id}?populate[image][fields][0]=url`)
-      const data = await response.json()
-      return data.data
-    }
-    const imageDetails = fetchData()
-    setDetails(imageDetails)
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
   return (
     <main>
       <Navbar />

@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import axios from 'axios'
-import { BsArrowRight } from 'react-icons/bs'
 import { FaInstagramSquare, FaTwitter, FaLinkedin, FaFacebook, FaChevronRight } from 'react-icons/fa'
+import  { Slide, Fade } from 'react-awesome-reveal'
 import { members } from '../resources/members'
 
 import Navbar from '../components/navbar/navbar'
@@ -45,6 +45,7 @@ const Home = ({
   categories.map(article => {
     return articles.push(...article)
   })
+
 
   const latestArticlesFinder = (arr) => {
     const sortedArticles = arr.sort((a, b) => b.id - a.id)

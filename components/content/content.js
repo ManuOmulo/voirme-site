@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import Image from 'next/image'
+import { motion, AnimatePresence } from 'framer-motion'
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 import styles from './content.module.scss'
 
 const Content = ({ data }) => {
   const [posts, setPosts] = useState(data);
-  const [hasMore, setHasMore] = useState(true);
+  // const [hasMore, setHasMore] = useState(true);
+  const [selectedId, setSelectedId] = useState(null)
 
   const getMorePost = async () => {
     const res = await fetch(
@@ -27,15 +29,22 @@ const Content = ({ data }) => {
       </p>}
         className={styles.gallery}
       >
-        {posts.map((data, key) => (
-          <div key={key} className={styles.image}>
-            <div className={styles.imageContainer}>
-              <Image src={`${data.attributes.image.data.attributes.url}`} layout="fill" alt="backgroundImage"/>
-            </div>
-            <div className={styles.imageDetails}>
-              <p>{data.attributes.title}</p>
-            </div>
-          </div>
+        {posts.map((image, key) => (
+          <>
+            <motion.div
+              layoutId={image.id}
+              key={image.id}
+              className={styles.image}
+              onClick={() => setSelectedId(image.id)}
+              >
+                <div className={styles.imageContainer}>
+                  <Image src={`${image.attributes.image.data.attributes.url}`} layout="fill" alt="backgroundImage"/>
+                </div>
+                <div className={styles.imageDetails}>
+                  <motion.p>{image.attributes.title}</motion.p>
+                </div>
+            </motion.div>
+          </>
         ))}
       </InfiniteScroll>
     </>

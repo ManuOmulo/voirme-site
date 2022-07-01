@@ -26,7 +26,6 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>VoirMe</title>
-        {/* <a href='https://www.freepik.com/vectors/cms'>Cms vector created by freepik - www.freepik.com</a> */}
       </Head>
       <NextNProgress
         color="#f56886"
@@ -37,6 +36,9 @@ function MyApp({ Component, pageProps }) {
         loading ?
         <LoadingSpinner /> :
         <>
+          <div className="message">
+            <h3>👷 Site is Still Under Construction 🔨 </h3>
+          </div>
           <Component {...pageProps} />
           <Footer />
         </>

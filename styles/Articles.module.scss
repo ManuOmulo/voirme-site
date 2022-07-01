@@ -4,7 +4,7 @@
   position: relative;
   width: 76%;
   height: max-content;
-  margin: 6em auto;
+  margin: 1em auto 6em;
 }
 
 .categories {
@@ -317,7 +317,7 @@
 
 @media screen and (max-width: 768px) {
   .header {
-    margin: 3.5em auto 0;
+    margin: 1em auto 0;
     width: 96%;
 
     .categories {
@@ -348,7 +348,6 @@
         padding: 5px;
 
         h3 {
-          // font-size: 1.4em;
           margin: 0;
           margin: 0em 0 0.3em;
         }
@@ -356,6 +355,32 @@
         .description {
           line-height: 22px;
           font-size: 0.95em;
+        }
+
+        .metaData {
+          margin: 0.5em 0 1em;
+
+          .author {
+            width: max-content;
+
+            .authorName {
+              font-size: 0.75em;
+              font-weight: 800;
+              padding: 0;
+            }
+          }
+
+          .calendar {
+            p {
+              font-size: 0.75em;
+              font-weight: 800;
+            }
+          }
+
+          .category {
+            font-size: 0.75em;
+            font-weight: 800;
+          }
         }
 
         button {

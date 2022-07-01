@@ -88,7 +88,6 @@ const AllArticles = ({ articles, pageCount }) => {
           </div>
           <div className={styles.headerDetails}>
             <h3>{headerArticle.attributes.title}</h3>
-            {/* <h3>softie mkfmkd sdlsld dlmsm dsllls dlsmdkl dkdkwl</h3> */}
             <p className={styles.description}>{headerArticle.attributes.description}</p>
             <div className={styles.metaData}>
               <div className={styles.author}>

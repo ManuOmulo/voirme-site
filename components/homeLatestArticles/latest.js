@@ -5,7 +5,7 @@ import styles from './latest.module.scss'
 
 const LatestComponent = ({ post, className }) => {
   const header = (post.attributes.title.length >= 22) ?
-  `${post.attributes.title.slice(0, 22)}...` :
+  `${post.attributes.title.slice(0, 16)}...` :
   `${post.attributes.title}`
   return (
     <div className={className}>
