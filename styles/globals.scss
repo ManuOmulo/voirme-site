@@ -193,9 +193,9 @@ li {
   }
 
   button {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    // position: absolute;
+    // bottom: 0;
+    // left: 0;
     width: max-content;
     margin: 1em 0;
     padding: 15px 20px;
@@ -350,20 +350,19 @@ li {
     .icon {
       display: block;
       position: absolute;
-      top:20px;
-      left: 20px;
-      width: 25px;
-      height: 25px;
-      color: colors.$secondary-color;
-      opacity: 0.7;
-      font-weight: 900;
+      top: -20px;
+      right: 20px;
+      font-weight: 700;
+      font-size: 35px;
       cursor: pointer;
+      width: max-content;
+      color: colors.$secondary-color;
     }
 
     .mainContainer {
       position: absolute;
-      width: 80%;
-      margin: 5em 2em 3em 2em;
+      width: 100%;
+      margin: 5em auto 3em;
       border-radius: 10px;
       border: 2px solid red;
     }
@@ -411,3 +410,15 @@ li {
 // ############## end on navbar image #######################
 
 
+// -------------- Toast Container ----------------------
+@media screen and (max-width: 500px) {
+  .Toastify__toast-container {
+    max-width: 250px;
+    font-size: 0.9em;
+    height: 10px;
+  }
+
+  .Toastify__toast-body {
+    height: 10px;
+  }
+}

@@ -1,9 +1,12 @@
 import Image from "next/image";
 import  { Fade } from 'react-awesome-reveal'
+import { toast } from 'react-toastify';
 
 import headerVector from '../../public/hero/undraw_thought_process_re_om58.svg'
 
 const Svg = () => {
+  const notify = () => toast.info("We are working on it")
+
   return (
     <div className="header">
       {/* <!--Content before waves--> */}
@@ -17,8 +20,8 @@ const Svg = () => {
           </Fade>
           <Fade direction="up">
             <p>A platform for creatives and skilled individuals to connect, work together and showcase their talents.</p>
-            <button>Join our Community</button>
           </Fade>
+          <button onClick={notify}>Join our Community</button>
         </div>
         <div className="vectorContainer">
           <Fade delay={3}>
