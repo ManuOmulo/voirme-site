@@ -29,6 +29,7 @@ const Footer = () => {
             <li><Link href="/categories/sports">Sports</Link></li>
             <li><Link href="/categories/education">Education</Link></li>
             <li><Link href="/categories/lifestyle">Lifestyle</Link></li>
+            <li><Link href="/privacy">Privacy Policy</Link></li>
           </ul>
         </section>
 
