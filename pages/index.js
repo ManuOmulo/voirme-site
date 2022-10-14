@@ -2,7 +2,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import axios from 'axios'
 import { FaInstagramSquare, FaTwitter, FaLinkedin, FaFacebook, FaChevronRight } from 'react-icons/fa'
-import  { Slide, Fade } from 'react-awesome-reveal'
 import { members } from '../resources/members'
 
 import Navbar from '../components/navbar/navbar'
@@ -85,11 +84,6 @@ const Home = ({
           </div>
         </div>
 
-
-        {/* <section>
-          <h1>Notice Board</h1>
-        </section> */}
-
         <div className={styles.stories}>
           <section className={styles.topStories}>
             <h3 className={styles.storiesHeader}>Top Stories</h3>
@@ -133,7 +127,7 @@ const Home = ({
           </div>
         </section>
 
-        <section className={styles.about}>
+        <section className={styles.about} id="about">
           <h2>Who we Are</h2>
           <div className={styles.summary}>
             <div className={styles.aboutDetails}>
