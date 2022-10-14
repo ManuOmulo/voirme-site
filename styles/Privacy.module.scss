@@ -1,0 +1,17 @@
+@use "../abstracts/colors";
+@use "../abstracts/fonts";
+
+.privacyContainer {
+  max-width: 75%;
+  margin: 0 auto 5em;
+
+  h1,
+  h2 {
+    color: colors.$secondary-color;
+    font-family: fonts.$header-font;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+}
