@@ -32,6 +32,8 @@ function MyApp({ Component, pageProps }) {
         <title>VoirMe</title>
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <meta name="google-site-verification" content="gPKk-JhZMy5L3H7jYXJiUaObORjm-9k1G-vJphKxIIY" />
+        <meta name="description" content="VoirMe is a platform for students and alumni from various campuses in Kenya, that serves as an online store for custom commodities while also showcasing their respective cultures and talents. Serves to give exposure, educate and entertain."/>
+
       </Head>
       <NextNProgress
         color="#f56886"
